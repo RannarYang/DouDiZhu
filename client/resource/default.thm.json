@@ -29,6 +29,14 @@
     "resource/eui_skins/ToggleSwitchSkin.exml",
     "resource/eui_skins/VScrollBarSkin.exml",
     "resource/eui_skins/VSliderSkin.exml",
-    "resource/game_skins/DemoSkin.exml"
+    "resource/game_skins/DemoSkin.exml",
+    "resource/game_skins/component/ButtonSkin.exml",
+    "resource/game_skins/StartSkin.exml",
+    "resource/game_skins/component/ButtonBlueSkin.exml",
+    "resource/game_skins/component/ButtonBlueSmallSkin.exml",
+    "resource/game_skins/component/ButtonCloseSkin.exml",
+    "resource/game_skins/component/ButtonSmallSkin.exml",
+    "resource/game_skins/popup/LoginSkin.exml",
+    "resource/game_skins/popup/RegistSkin.exml"
   ]
 }

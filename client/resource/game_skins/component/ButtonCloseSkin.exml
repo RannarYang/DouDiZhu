@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ButtonCloseSkin" states="up,down,disabled" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" width="72">
+    <e:Image alpha.disabled="0.5" source="close_btn_png"/>
+</e:Skin>

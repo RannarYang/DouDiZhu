@@ -17,7 +17,7 @@ class MsgCenter implements IBase{
 				break;
 			case AreaCode.NET:
 				NetManager.getInstance().execute(eventCode, msg);
-				break
+				break;
 		}
 	}
 }

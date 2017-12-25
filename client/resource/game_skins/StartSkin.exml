@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StartSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_png" x="0" y="0"/>
+	<e:Image source="logo_png" verticalCenter="-68.5" anchorOffsetX="0" horizontalCenter="0" width="566.04" anchorOffsetY="0" height="357"/>
+	<e:Button id="btnStart" label="开始游戏" y="484" skinName="ButtonSkin" left="180"/>
+	<e:Button id="btnRegist" label="注册账号" y="484" skinName="ButtonSkin" right="180"/>
+</e:Skin>

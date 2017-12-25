@@ -1,5 +1,5 @@
 enum AreaCode {
 	UI,
 	CHARACTER,
-	NET
+	NET,
 }

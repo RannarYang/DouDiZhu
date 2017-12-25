@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoginSkin" width="396" height="438" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group width="358" bottom="0" horizontalCenter="0" height="401">
+		<e:Image source="panel-orange_png" scale9Grid="15,15,96,96" left="0" right="0" top="0" bottom="0"/>
+		<e:Label text="准备好战斗了吗？" y="48.52" fontFamily="Microsoft YaHei" size="32" x="50"/>
+		<e:Label text="账号：" x="42" y="153.69" fontFamily="Microsoft YaHei"/>
+		<e:Label text="密码：" x="42" y="233.73" fontFamily="Microsoft YaHei"/>
+		<e:TextInput width="180" height="45" x="132" y="151.64" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:TextInput width="180" height="45" x="132" y="227.38" anchorOffsetX="0" anchorOffsetY="0" displayAsPassword="true"/>
+		<e:Button label="登录" y="311.64" skinName="ButtonSmallSkin" x="88"/>
+	</e:Group>
+	<e:Button id="btnClose" label="Button" x="324" y="6" skinName="ButtonCloseSkin"/>
+</e:Skin>

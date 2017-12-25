@@ -1,0 +1,4 @@
+class FightScene {
+	public constructor() {
+	}
+}

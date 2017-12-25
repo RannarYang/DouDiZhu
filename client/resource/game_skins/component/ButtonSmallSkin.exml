@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ButtonSmallSkin" states="up,down,disabled" minHeight="50" minWidth="100" xmlns:e="http://ns.egret.com/eui" height.up="72">
+    <e:Image width="100%" height="100%" scale9Grid="1,3,8,8" alpha.disabled="0.5" source="btn3_png"/>
+    <e:Label id="labelDisplay" size="25" textColor="0xFFFFFF" textAlign="center" text="开始游戏" fontFamily="Microsoft YaHei" verticalAlign="middle" horizontalCenter="0.5" verticalCenter="-2.5"/>
+</e:Skin>

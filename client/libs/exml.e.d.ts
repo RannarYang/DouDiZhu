@@ -52,3 +52,19 @@ declare module skins{
 }
 declare class DemoSkin extends eui.Skin{
 }
+declare class StartSkin extends eui.Skin{
+}
+declare class ButtonBlueSkin extends eui.Skin{
+}
+declare class ButtonBlueSmallSkin extends eui.Skin{
+}
+declare class ButtonCloseSkin extends eui.Skin{
+}
+declare class ButtonSkin extends eui.Skin{
+}
+declare class ButtonSmallSkin extends eui.Skin{
+}
+declare class LoginSkin extends eui.Skin{
+}
+declare class RegistSkin extends eui.Skin{
+}
