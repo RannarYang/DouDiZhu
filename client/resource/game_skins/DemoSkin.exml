@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DemoSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui">
+    <e:Button id="btnChangeText" label="改变文本" y="591.94" width="200" height="100" horizontalCenter="0"/>
+	<e:Label id="textLabel" text="文本" y="310.94" size="94" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+</e:Skin>

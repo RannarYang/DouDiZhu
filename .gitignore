@@ -1,0 +1,4 @@
+client/bin-debug/*
+server/bin-debug/*
+server/node_modules
+server/node_modules/*

@@ -1,0 +1,36 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/eui/eui.js",
+		"libs/modules/res/res.js",
+		"libs/modules/socket/socket.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/game/game.js",
+		"promise/bin/promise.js"
+	],
+	"game": [
+		"bin-debug/application/base/UIBase.js",
+		"bin-debug/framework/ManagerBase.js",
+		"bin-debug/application/manager/UIManager.js",
+		"bin-debug/ThemeAdapter.js",
+		"bin-debug/application/Game.js",
+		"bin-debug/application/base/CharacterBase.js",
+		"bin-debug/AssetAdapter.js",
+		"bin-debug/application/eventCode/UIEventCode.js",
+		"bin-debug/application/main/DemoView1.js",
+		"bin-debug/application/main/DemoView2.js",
+		"bin-debug/application/manager/CharacterManager.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/application/net/ClientPeer.js",
+		"bin-debug/application/net/EncodeTool.js",
+		"bin-debug/application/net/HandlerBase.js",
+		"bin-debug/application/net/IApplication.js",
+		"bin-debug/application/net/NetManager.js",
+		"bin-debug/application/net/SocketMsg.js",
+		"bin-debug/framework/AreaCode.js",
+		"bin-debug/framework/IBase.js",
+		"bin-debug/Main.js",
+		"bin-debug/framework/MsgCenter.js"
+	]
+}

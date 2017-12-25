@@ -1,0 +1,27 @@
+{
+  "name": "doudizhu_server",
+  "version": "1.0.0",
+  "description": "斗地主 服务器端",
+  "main": "main.js",
+  "dependencies": {
+    "@types/node": "^8.5.2",
+    "net": "^1.0.2",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2",
+    "ws": "^3.3.3"
+  },
+  "scripts": {
+    "debug": "ts-node gameserver/Program.ts",
+    "build": "tsc",
+    "frontend": "anywhere -p 8091",
+    "backend": "ts-node gameserver/main.ts",
+    "backend:debug": "nodemon --debug bin-debug/gameserver/Program.js",
+    "backend:inspect": "nodemon --inspect bin-debug/gameserver/Program.js"
+  },
+  "keywords": [
+    "斗地主",
+    "服务器端"
+  ],
+  "author": "RannarYang",
+  "license": "ISC"
+}
