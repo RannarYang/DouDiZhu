@@ -19,8 +19,25 @@ class NetManager extends ManagerBase implements IApplication {
     public onDisconnect(client: ClientPeer) {
 
     }
+
+    // 处理接受到的服务器发来的消息
+    private accountHandler: AccountHandler = new AccountHandler();
+    private userHandler: UserHandler = new UserHandler();
+    private matchHandler: MatchHandler = new MatchHandler();
     public onReceive(msg: SocketMsg) {
         console.log('NetManager.onReceive: ', msg);
+        // msg.opCode 
+        switch(msg.opCode) {
+            case OpCode.ACCOUNT:
+                this.accountHandler.onReceive(msg.subCode, msg.value);
+                break;
+            case OpCode.USER:
+                this.userHandler.onReceive(msg.subCode, msg.value);
+                break;
+            case OpCode.MATCH:
+                this.matchHandler.onReceive(msg.subCode, msg.value);
+                break;
+        }
     }
     /**
      * 处理客户端内部给服务器发消息的事件
@@ -29,7 +46,9 @@ class NetManager extends ManagerBase implements IApplication {
      */
     public execute(eventCode: number, msg: SocketMsg) {
         switch(eventCode) {
-            
+            case NetEventCode.SEND:
+                this.clientPeer.sendMsg(msg);
+                break;
         }
     }
 }

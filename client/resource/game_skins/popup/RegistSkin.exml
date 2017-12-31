@@ -4,12 +4,12 @@
 		<e:Image scale9Grid="15,15,96,96" source="panel-blue_png" left="0" right="0" top="0" bottom="0"/>
 		<e:Label text="欢迎加入斗地主的世界！" y="48.52" fontFamily="Microsoft YaHei" size="28" x="24"/>
 		<e:Label text="账号：" x="42" y="120.69" fontFamily="Microsoft YaHei"/>
-		<e:TextInput width="180" height="45" x="132" y="118.64" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:TextInput id="inputAccount" width="180" height="45" x="132" y="118.64" anchorOffsetX="0" anchorOffsetY="0"/>
 		<e:Label text="密码：" x="42" y="200.73" fontFamily="Microsoft YaHei"/>
-		<e:TextInput width="180" height="45" x="132" y="194.38" anchorOffsetX="0" anchorOffsetY="0" displayAsPassword="true"/>
+		<e:TextInput id="inputPwd" width="180" height="45" x="132" y="194.38" anchorOffsetX="0" anchorOffsetY="0" displayAsPassword="true"/>
 		<e:Label text="重复：" x="42" y="271.73" fontFamily="Microsoft YaHei"/>
-		<e:TextInput width="180" height="45" x="132" y="265.38" anchorOffsetX="0" anchorOffsetY="0" displayAsPassword="true"/>
-		<e:Button label="注册" y="327.64" skinName="ButtonBlueSmallSkin" x="88"/>
+		<e:TextInput id="inputPwdRepeat" width="180" height="45" x="132" y="265.38" anchorOffsetX="0" anchorOffsetY="0" displayAsPassword="true"/>
+		<e:Button id="btnRegist" label="注册" y="327.64" skinName="ButtonBlueSmallSkin" x="88"/>
 	</e:Group>
 	<e:Button id="btnClose" label="Button" x="355" y="6" skinName="ButtonCloseSkin"/>
 </e:Skin>

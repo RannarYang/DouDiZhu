@@ -83,6 +83,14 @@ class PopUpManager{
 		// 重新设置lucency
 		this.setLucency();
 	}
+
+	// 关闭所有窗体
+	public removeAllPopUp() {
+		this._dicShowView = {};
+		this._showStack = [];
+		this._popUpContainer.removeChildren();
+		this.initCover();
+	}
 	public getPopUp<T extends UIBase>(t: {new(a): T}) {
 		return this._dicShowView[t.prototype.constructor];
 	}

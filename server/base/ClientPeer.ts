@@ -74,6 +74,9 @@ export default class ClientPeer {
      */
     public send(opCode: number, subCode: number, value: any): void {
         let msg = new SocketMsg(opCode, subCode, value);
+        this.sendMsg(msg);
+    }
+    public sendMsg(msg: SocketMsg) {
         let packet = EncodeTool.encodePacket(msg);
         this.saveMsg(packet);
     }

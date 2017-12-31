@@ -14,7 +14,7 @@ class UIBase extends eui.Component implements IBase {
 	public dispatch(areaCode: AreaCode, eventCode: number, msg: any) {
 		MsgCenter.getInstance().dispatch(areaCode, eventCode, msg);
 	}
-	public execute(areaCode: number, msg: any ){
+	public execute(eventCode: number, msg: any ){
 
 	}
 	// 离开舞台的时候自动解除所有的事件监听

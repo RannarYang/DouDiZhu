@@ -5,12 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug by ts-node",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/ts-node/dist/_bin.js",
+            "args": [
+                "${workspaceRoot}/gameserver/Program.ts"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "启动程序",
             "program": "${workspaceRoot}/bin-debug/gameserver/Program.js",
             "sourceMaps": true,
             "outFiles": []
-        }
+        },
+        
     ]
 }

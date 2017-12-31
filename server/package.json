@@ -4,10 +4,7 @@
   "description": "斗地主 服务器端",
   "main": "main.js",
   "dependencies": {
-    "@types/node": "^8.5.2",
     "net": "^1.0.2",
-    "ts-node": "^4.1.0",
-    "typescript": "^2.6.2",
     "ws": "^3.3.3"
   },
   "scripts": {
@@ -23,5 +20,8 @@
     "服务器端"
   ],
   "author": "RannarYang",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.5.2"
+  }
 }

@@ -1,0 +1,3 @@
+enum NetEventCode {
+	SEND
+}

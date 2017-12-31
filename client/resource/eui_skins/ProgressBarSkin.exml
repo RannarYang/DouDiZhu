@@ -4,6 +4,6 @@
 			 height="100%" verticalCenter="0"/>
 	<e:Image id="thumb" height="100%" width="100%" source="thumb_pb_png"/>
 	<e:Label id="labelDisplay" textAlign="center" verticalAlign="middle"
-			 size="15" fontFamily="Tahoma" textColor="0x707070"
-			 horizontalCenter="0" verticalCenter="0"/>
+			 size="15" fontFamily="Tahoma"
+			 horizontalCenter="0" verticalCenter="0" textColor="0xe8a82c"/>
 </e:Skin>

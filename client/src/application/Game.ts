@@ -24,7 +24,7 @@ class Game {
 		let popUpContainer: eui.Component = new eui.Component();
 		this.mStage.addChild(popUpContainer);
 
-		let noticeManager: NoticeManager = new NoticeManager();
+		let noticeManager = this.noticeManager = new NoticeManager();
 		this.mStage.addChild(noticeManager);
 
 		this.popUpManager = PopUpManager.getInstance();
@@ -41,7 +41,7 @@ class Game {
 		let scene = new t(this.mSceneManage);
 		this.mSceneManage.setState(scene);
 		// todo 可能需要删除所有的popup 
-
+		this.popUpManager.removeAllPopUp();
 		// 加入下一场景
 		this.mFixContainer.addChild(scene);
 	}

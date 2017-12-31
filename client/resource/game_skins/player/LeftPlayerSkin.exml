@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LeftPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="160a017ec78"/>
+<e:Image source="Farmer_png" x="-2.19" y="185.22" anchorOffsetX="0" width="130" anchorOffsetY="0" height="161.56"/>
+<e:Component id="readyCom" width="181" height="72" x="101.5" y="285.52" currentState="hasReady">
+    <e:skinName>
+    <e:Skin states="toReady,hasReady" width="181" height="72">
+        <e:Label text="已准备" fontFamily="Microsoft YaHei" stroke="3" x.hasReady="46" y.hasReady="21" x="46" y="21" includeIn="hasReady"/>
+    </e:Skin>
+    </e:skinName>
+</e:Component>
+</e:Skin>

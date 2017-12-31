@@ -21,5 +21,10 @@
 3. model数据层
 4. 数据库（暂不实现）
 5. 运行：
+    npm install -g typings
+    npm install -g ts-node
+    npm install -g typescript
     npm install
-    ts-node Program.ts
+    typings install dt~node --global --save
+    ts-node gameserver/Program.ts
+ps: [使用ts-node和vsc来调试TypeScript代码](https://segmentfault.com/a/1190000010605261)

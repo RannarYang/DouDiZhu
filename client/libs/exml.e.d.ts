@@ -50,7 +50,11 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
-declare class DemoSkin extends eui.Skin{
+declare class CreateSkin extends eui.Skin{
+}
+declare class FightSkin extends eui.Skin{
+}
+declare class MainSkin extends eui.Skin{
 }
 declare class StartSkin extends eui.Skin{
 }
@@ -64,7 +68,19 @@ declare class ButtonSkin extends eui.Skin{
 }
 declare class ButtonSmallSkin extends eui.Skin{
 }
+declare class ButtonSmallestSkin extends eui.Skin{
+}
+declare class LeftPlayerSkin extends eui.Skin{
+}
+declare class RightPlayerSkin extends eui.Skin{
+}
+declare class UserPlayerSkin extends eui.Skin{
+}
+declare class ChatSkin extends eui.Skin{
+}
 declare class LoginSkin extends eui.Skin{
 }
 declare class RegistSkin extends eui.Skin{
+}
+declare class SettingSkin extends eui.Skin{
 }

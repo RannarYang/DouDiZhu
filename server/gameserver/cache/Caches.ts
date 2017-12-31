@@ -1,0 +1,9 @@
+import AccountCache from "./AccountCache";
+import UserCache from "./UserCache";
+import MatchCache from "./match/MatchCache";
+
+export default class Caches {
+    public static account: AccountCache = new AccountCache();
+    public static user: UserCache = new UserCache();
+    public static match: MatchCache = new MatchCache();
+}

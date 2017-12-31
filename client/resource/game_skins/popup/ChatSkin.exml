@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChatSkin" width="304" height="370" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+    <e:Image source="panel-orange_png" x="0" y="0" scale9Grid="15,15,96,96" anchorOffsetX="0" width="304" anchorOffsetY="0" height="370"/>
+	<e:Scroller width="285" height="355" anchorOffsetX="0" anchorOffsetY="0" x="10" y="8">
+		<e:List>
+			<e:itemRendererSkinName>
+				<e:Skin states="up,down,disabled" minHeight="50" minWidth="100" width="285">
+	<e:Rect fillColor="0xffffff" left="7" right="7" top="7" bottom="7" fillAlpha="0.5"/>
+				<e:Label id="labelDisplay" top="5" bottom="5" left="8" right="8" size="20" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" anchorOffsetX="0" text="大家好，很高兴见到大家~" textColor="0x000000"/>
+				</e:Skin>
+			</e:itemRendererSkinName>
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+					<e:Object a="null"/>
+				</e:Array>
+			</e:ArrayCollection>
+		</e:List>
+	</e:Scroller>
+</e:Skin>

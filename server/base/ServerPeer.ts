@@ -23,7 +23,6 @@ export default class ServerPeer {
      * @param app 
      */
     public setApplication(app: IApplication) {
-        console.log('this.applicatoin: ', app, this.application);
         this.application = app;
     }
     /**
@@ -47,7 +46,7 @@ export default class ServerPeer {
                 this.processAccept(clientSocket, request);
             });
         } catch(e) {
-            console.error(e);
+            console.log(e);
         }
     }
     private processAccept(clientSocket: ws, request) {
@@ -62,7 +61,7 @@ export default class ServerPeer {
                 this.processReceive(client, data);
             })
         } catch(e) {
-            console.error(e);
+            console.log(e);
         }
         
     }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="UserPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui">
+<e:Component id="readyCom" width="181" height="72" x="389.5" y="440">
+    <e:skinName>
+        <e:Skin states="toReady,hasReady"  width="181" height="72">
+            <e:Button label="准备" x="0" skinName="ButtonBlueSmallSkin" includeIn="toReady" name="btnReady"/>
+            <e:Label text="已准备" fontFamily="Microsoft YaHei" stroke="3" x.hasReady="46" y.hasReady="21" x="46" y="21" includeIn="hasReady"/>
+        </e:Skin>
+    </e:skinName>
+</e:Component>
+<e:Image source="Farmer_png" x="62.81" y="431.22" anchorOffsetX="0" width="130" anchorOffsetY="0" height="161.56"/>
+</e:Skin>

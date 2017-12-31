@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CreateSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="hlddz.00045_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label text="欢迎加入斗地主，快起个有个性的名字吧~" x="157.68" y="90.43" size="47" fontFamily="Microsoft YaHei" textColor="0x000000" anchorOffsetX="0" width="650" anchorOffsetY="0" stroke="2" strokeColor="0xffffff"/>
+	<e:TextInput id="inputName" width="386.67" height="89.69" y="230.31" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0.5"/>
+	<e:Button id="btnCreate" label="创建" y="369.88" skinName="ButtonSkin" horizontalCenter="0.5"/>
+</e:Skin>

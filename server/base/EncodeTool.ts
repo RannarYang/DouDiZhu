@@ -6,10 +6,10 @@ export default class EncodeTool {
      */
     public static encodePacket(data: SocketMsg) : Buffer{
         let valStr = JSON.stringify(data.value)
-        let buffer = new Buffer(6 + valStr.length);
+        let buffer = new Buffer(4 + Buffer.byteLength(valStr));
         buffer.writeInt16BE(data.opCode, 0);
         buffer.writeInt16BE(data.subCode, 2);
-        buffer.write(valStr, 4);
+        buffer.write(valStr, 4, Buffer.byteLength(valStr));
         return buffer;
     }
     /**

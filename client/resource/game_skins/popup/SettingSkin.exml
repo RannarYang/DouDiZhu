@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SettingSkin" width="511" height="342" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="panel-orange_png" scale9Grid="15,15,96,96" left="15" right="15" top="5" bottom="5"/>
+	<e:Button id="btnClose" label="Button" x="439" y="0" skinName="ButtonCloseSkin"/>
+	<e:Label text="音乐开关:" x="101" y="115" fontFamily="Microsoft YaHei" stroke="2" strokeColor="0x422727"/>
+	<e:Label text="音量大小:" x="101" y="170" fontFamily="Microsoft YaHei" stroke="2" strokeColor="0x422727"/>
+	<e:ToggleSwitch label="ToggleButton" x="281" y="117"/>
+</e:Skin>

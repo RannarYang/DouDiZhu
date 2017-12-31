@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FightSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image source="Common_BG4_2x_png" x="0" y="0"/>
+	
+	
+	<e:Image source="dou_png" x="76.81" y="593"/>
+	<e:Label id="lblBeen" text="x 9999" x="140" y="605" fontFamily="Microsoft YaHei"/>
+	<e:Button id="btnChat" label="快速喊话" x="734.25" y="600" anchorOffsetX="0" width="108.72" anchorOffsetY="0" height="43.25" skinName="ButtonSmallestSkin"/>
+	<ns1:ChatView id="chatView" x="634" y="228" skinName="ChatSkin" visible="false"/>
+	
+</e:Skin>

@@ -6,7 +6,8 @@ class EncodeTool {
     public static decodePacket(byte: egret.ByteArray): SocketMsg {
         let opCode : number = byte.readShort();
         let subCode : number = byte.readShort();
-        let value:string = JSON.parse(byte.readUTFBytes(byte.bytesAvailable));
+        let valStr: string = byte.readUTFBytes(byte.bytesAvailable);
+        let value:string = JSON.parse(valStr);
         let msg: SocketMsg = new SocketMsg(opCode, subCode, value);
         return msg;
     }

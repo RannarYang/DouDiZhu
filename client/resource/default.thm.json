@@ -29,14 +29,22 @@
     "resource/eui_skins/ToggleSwitchSkin.exml",
     "resource/eui_skins/VScrollBarSkin.exml",
     "resource/eui_skins/VSliderSkin.exml",
-    "resource/game_skins/DemoSkin.exml",
     "resource/game_skins/component/ButtonSkin.exml",
+    "resource/game_skins/CreateSkin.exml",
+    "resource/game_skins/component/ButtonSmallestSkin.exml",
+    "resource/game_skins/popup/ChatSkin.exml",
+    "resource/game_skins/FightSkin.exml",
+    "resource/game_skins/MainSkin.exml",
     "resource/game_skins/StartSkin.exml",
     "resource/game_skins/component/ButtonBlueSkin.exml",
     "resource/game_skins/component/ButtonBlueSmallSkin.exml",
     "resource/game_skins/component/ButtonCloseSkin.exml",
     "resource/game_skins/component/ButtonSmallSkin.exml",
+    "resource/game_skins/player/LeftPlayerSkin.exml",
+    "resource/game_skins/player/RightPlayerSkin.exml",
+    "resource/game_skins/player/UserPlayerSkin.exml",
     "resource/game_skins/popup/LoginSkin.exml",
-    "resource/game_skins/popup/RegistSkin.exml"
+    "resource/game_skins/popup/RegistSkin.exml",
+    "resource/game_skins/popup/SettingSkin.exml"
   ]
 }

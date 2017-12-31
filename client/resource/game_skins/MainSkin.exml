@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainSkin" width="960" height="640" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*" states="normal,matching" >
+	<w:Declarations>
+	</w:Declarations>
+	<e:Image source="new_BJ_png" anchorOffsetX="0" width="1105" anchorOffsetY="0" height="650" x="-72" y="-5" locked="true"/>
+	<e:Image source="jishianniudi_png" x="22" y="22" locked="true"/>
+	<e:Image source="default_png" x="12" y="15.5" locked="true"/>
+	<e:Label id="lblName" text="Name" y="41" bold="true" textColor="0x0962f4" size="25" horizontalCenter="-293.5"/>
+	<e:Label text="经验：" y="82.5" textColor="0x0962F4" size="16" horizontalCenter="-321" fontFamily="Microsoft YaHei"/>
+	<e:Label id="lblLv" text="Lv.99" y="41" bold="true" textColor="0x0962F4" size="25" horizontalCenter="-216.5"/>
+	<e:ProgressBar id="proExp" width="140" height="20" x="181.97" y="80.5" anchorOffsetX="0" value="50"/>
+	<e:Image source="dou_png" x="95" y="124"/>
+	<e:Label id="lblBeen" text="x 123445" x="156" y="132"/>
+	<e:Image id="btnMatch" source="kuaisu_choose_png" y="531" horizontalCenter="0" includeIn="normal"/>
+	<e:Image source="huanledou_png" x="211.97" y="284" includeIn="matching"/>
+	<e:Label id="label" text="正在寻找房间..." y="398" fontFamily="Microsoft YaHei" horizontalCenter="0" stroke="3" includeIn="matching"/>
+	<e:Image id="btnCancel" source="quxiao_loding (2)_png" x="423.5" y="462" includeIn="matching"/>
+	<e:Button id="btnEnter" label="进入房间" skinName="ButtonSkin" includeIn="matching" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="btnSetting" source="setting_png" x="844.97" y="15.03" anchorOffsetX="0" width="93.82" anchorOffsetY="0" height="93.82"/>
+</e:Skin>
