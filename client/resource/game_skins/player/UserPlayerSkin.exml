@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="UserPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui">
+<e:Skin class="UserPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
 <e:Component id="readyCom" width="181" height="72" x="389.5" y="440">
     <e:skinName>
         <e:Skin states="toReady,hasReady"  width="181" height="72">

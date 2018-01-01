@@ -68,10 +68,16 @@ export default class MatchHandler implements IHandler {
         
         // 检测：是否所有玩家都准备好了
         if(room.isAllReady()) {
+            // 通知房间内的玩家，要进行战斗了
+            room.brocast(OpCode.MATCH, MatchCode.START_BRO, null);
             // 开始战斗
+            this.startFight(room.getUidList());
+            // 摧毁房间
+            this.matchCache.destroy(room);
             
         }
     }
+    public startFight: (uidList: number[]) => void;
     private makeRoomDto(room: MatchRoom): MatchRoomDto {
         let dto = new MatchRoomDto();
         for(let uidKey in room.uidClientDict) {

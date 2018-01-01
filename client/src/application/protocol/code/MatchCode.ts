@@ -10,4 +10,6 @@ enum MatchCode {
     // 准备
     READY_CREQ,
     READY_BRO,
+    // 开始游戏
+    START_BRO
 }

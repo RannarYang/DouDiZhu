@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CardSkin" width="80" height="114" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="normal,selected" >
+	<e:Image id="cardImg" source="ClubEight_png" x="0" bottom.normal="0" top.selected="0"/>
+</e:Skin>

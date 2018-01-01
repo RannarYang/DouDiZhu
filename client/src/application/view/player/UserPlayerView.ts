@@ -2,13 +2,14 @@ class UserPlayerView extends PlayerBaseView{
 	private socketMsg: SocketMsg = new SocketMsg();
 	public constructor() {
 		super();
-		this.bind(UIEventCode.PLAYER_READY);
+		this.bind(UIEventCode.PLAYER_READY, UIEventCode.GAME_START);
 	}
 	protected createChildren() {
 		super.createChildren();
 		this.skinName = UserPlayerSkin;
 	}
 	public execute(eventCode: number, msg: any) {
+		super.execute(eventCode, msg);
 		switch(eventCode) {
 			case UIEventCode.PLAYER_READY:
 				let userId = <number> msg;
@@ -17,9 +18,12 @@ class UserPlayerView extends PlayerBaseView{
 					this.readyState();
 				}
 				break;
+			case UIEventCode.GAME_START:
+				let playerCtrl = new MyPlayerCtrl();
+				this.addChild(playerCtrl);
+				break;
 		}
 	}
-	private rea
 	protected childrenCreated() {
 		super.childrenCreated();
 		this.readyCom.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onReadyCom, this);

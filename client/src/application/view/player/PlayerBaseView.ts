@@ -3,7 +3,7 @@ class PlayerBaseView extends UIBase {
 	protected readyCom: eui.Component;
 	public constructor() {
 		super();
-		this.bind(UIEventCode.PLAYER_ENTER, UIEventCode.PLAYER_READY);
+		this.bind(UIEventCode.PLAYER_ENTER);
 	}
 	protected createChildren() {
 		super.createChildren();
@@ -35,6 +35,9 @@ class PlayerBaseView extends UIBase {
 					}
 				}
 				break;
+			case UIEventCode.GAME_START:
+				this.readyCom.visible = false;
+				break;
 		}
 	}
 	public show() {
@@ -42,7 +45,7 @@ class PlayerBaseView extends UIBase {
 		let matchRoom = Models.gameModel.matchRoomDto;
 		if(this.userDto && matchRoom.hasReady(this.userDto.id)) {
 			this.readyCom.currentState = 'hasReady';
-		} else if(this.userDto) {
+		} else {
 			this.readyCom.currentState = 'toReady';
 		} 
 	}

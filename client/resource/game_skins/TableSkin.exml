@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TableSkin" width="960" height="163" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
+    <e:Image source="jujsidai_png" horizontalCenter="0" verticalCenter="0"/>
+	<ns1:CardCtrl x="330" y="3" skinName="CardSkin"/>
+	<ns1:CardCtrl y="3" skinName="CardSkin" x="439"/>
+	<ns1:CardCtrl x="548" y="3" skinName="CardSkin"/>
+</e:Skin>

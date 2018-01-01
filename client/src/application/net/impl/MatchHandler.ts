@@ -19,6 +19,9 @@ class MatchHandler extends HandlerBase {
 			case MatchCode.READY_BRO:
 				this.readyBro(<number> value);
 				break;
+			case MatchCode.START_BRO:
+				this.startBro();
+				break;
 		}
 	}
 	private enterResponse(matchRoomDto: MatchRoomDto) {
@@ -72,6 +75,13 @@ class MatchHandler extends HandlerBase {
 	private readyBro(readyUserId: number) {
 		Models.gameModel.matchRoomDto.ready(readyUserId);
 		this.dispatch(AreaCode.UI, UIEventCode.PLAYER_READY, readyUserId);
+	}
+	/**
+	 * 开始 广播
+	 */
+	private startBro() {
+		Game.getInstance().noticeManager.addNotice('所有玩家准备开始游戏');
+		this.dispatch(AreaCode.UI, UIEventCode.GAME_START, null);
 	}
 	private resetPos() {
 		let gameModel = Models.gameModel;

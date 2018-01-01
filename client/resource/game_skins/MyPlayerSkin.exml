@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="cardGroup" width="551" x="204.5" height="114" y="526">
+		<e:layout>
+			<e:HorizontalLayout gap="-54"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

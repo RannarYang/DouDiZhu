@@ -74,4 +74,18 @@ export default class MatchCache {
         let roomId = this.uidRoomIdDict[userId];
         return this.idModelDict[roomId];
     }
+    /**
+     * 摧毁房间
+     * @param room 
+     */
+    public destroy(room: MatchRoom) {
+        delete this.idModelDict[room.id];
+        for(let userId in room.uidClientDict) {
+            delete this.uidRoomIdDict[userId];
+        }
+        // 清空数据
+        room.uidClientDict = {};
+        room.readyUidList = [];
+        this.roomQueue.push(room);
+    }
 }

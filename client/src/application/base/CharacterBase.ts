@@ -1,6 +1,7 @@
-class CharacterBase implements IBase {
+class CharacterBase extends eui.Component implements IBase {
 	private list: number[] = [];
 	public constructor() {
+		super();
 	}
 	protected bind(...args) {
 		this.list = args;

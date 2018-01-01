@@ -1,6 +1,7 @@
 enum OpCode {
     ACCOUNT,
     USER,
-    MATCH
+    MATCH,
+    FIGHT,
 }
 export default OpCode;

@@ -8,4 +8,5 @@
 	<e:Button id="btnChat" label="快速喊话" x="734.25" y="600" anchorOffsetX="0" width="108.72" anchorOffsetY="0" height="43.25" skinName="ButtonSmallestSkin"/>
 	<ns1:ChatView id="chatView" x="634" y="228" skinName="ChatSkin" visible="false"/>
 	
+	
 </e:Skin>

@@ -24,6 +24,7 @@ class NetManager extends ManagerBase implements IApplication {
     private accountHandler: AccountHandler = new AccountHandler();
     private userHandler: UserHandler = new UserHandler();
     private matchHandler: MatchHandler = new MatchHandler();
+    private fightHandler: FightHandler = new FightHandler();
     public onReceive(msg: SocketMsg) {
         console.log('NetManager.onReceive: ', msg);
         // msg.opCode 
@@ -36,6 +37,9 @@ class NetManager extends ManagerBase implements IApplication {
                 break;
             case OpCode.MATCH:
                 this.matchHandler.onReceive(msg.subCode, msg.value);
+                break;
+            case OpCode.FIGHT:
+                this.fightHandler.onReceive(msg.subCode, msg.value);
                 break;
         }
     }

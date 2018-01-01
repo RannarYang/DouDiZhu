@@ -1,5 +1,6 @@
 enum OpCode {
     ACCOUNT,
     USER,
-    MATCH
+    MATCH,
+    FIGHT,
 }

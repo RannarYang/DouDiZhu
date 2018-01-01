@@ -50,11 +50,15 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class CardSkin extends eui.Skin{
+}
 declare class CreateSkin extends eui.Skin{
 }
 declare class FightSkin extends eui.Skin{
 }
 declare class MainSkin extends eui.Skin{
+}
+declare class MyPlayerSkin extends eui.Skin{
 }
 declare class StartSkin extends eui.Skin{
 }
