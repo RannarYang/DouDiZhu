@@ -46,7 +46,7 @@ export default class FightHandler implements IHandler {
             let player = room.playerList[pIndex];
             if(this.userCache.isOnline(player.userId)) {
                 client = this.userCache.getClientPeer(player.userId);
-                if(client == exClient) {
+                if(client === exClient) {
                     continue;
                 }
                 client.sendMsg(msg);

@@ -44,12 +44,16 @@ class FightView extends UIBase {
 		let matchRoomDto = Models.gameModel.matchRoomDto;
 		// 左边玩家
 		if(matchRoomDto.leftId != -1) {
+			let leftUserDto: UserDto = matchRoomDto.uidUserDict[matchRoomDto.leftId];
+			this.dispatch(AreaCode.UI, UIEventCode.SET_LEFT_PLAYER_DATA, leftUserDto);
 			this.leftPlayer.show();
 		} else {
 			this.leftPlayer.visible = false;
 		}
 		// 右边玩家
 		if(matchRoomDto.rightId != -1) {
+			let rightUserDto: UserDto = matchRoomDto.uidUserDict[matchRoomDto.rightId];
+			this.dispatch(AreaCode.UI, UIEventCode.SET_RIGHT_PLAYER_DATA, rightUserDto);
 			this.rightPlayer.show();
 		} else {
 			this.rightPlayer.visible = false;

@@ -20,7 +20,9 @@ class ManagerBase implements IBase{
 	{
 		this.dic[eventCode] = this.dic[eventCode] || [];
 		let list = this.dic[eventCode];
-		list.push(base);
+		if(list.indexOf(base) == -1) {
+			list.push(base);
+		}
 	}
 	public removeMul(eventCodes: number[], base: IBase): void {
 		for(let i = 0, len = eventCodes.length; i < len; i++) {

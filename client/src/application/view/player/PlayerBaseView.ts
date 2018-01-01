@@ -3,7 +3,7 @@ class PlayerBaseView extends UIBase {
 	protected readyCom: eui.Component;
 	public constructor() {
 		super();
-		this.bind(UIEventCode.PLAYER_ENTER);
+		this.bind(UIEventCode.PLAYER_ENTER, UIEventCode.PLAYER_READY, UIEventCode.GAME_START);
 	}
 	protected createChildren() {
 		super.createChildren();

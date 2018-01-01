@@ -38,6 +38,7 @@
     "resource/game_skins/MainSkin.exml",
     "resource/game_skins/MyPlayerSkin.exml",
     "resource/game_skins/StartSkin.exml",
+    "resource/game_skins/TableSkin.exml",
     "resource/game_skins/component/ButtonBlueSkin.exml",
     "resource/game_skins/component/ButtonBlueSmallSkin.exml",
     "resource/game_skins/component/ButtonCloseSkin.exml",

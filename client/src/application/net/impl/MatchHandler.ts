@@ -51,7 +51,7 @@ class MatchHandler extends HandlerBase {
 		// 发消息，显示玩家的状态面板
 		this.dispatch(AreaCode.UI, UIEventCode.PLAYER_ENTER, newUser.id);
 
-		Game.getInstance().noticeManager.addNotice("有新玩家 (" + newUser.name + + " )进入");
+		Game.getInstance().noticeManager.addNotice("有新玩家 (" + newUser.name + " )进入");
 		
 	}
 	/**

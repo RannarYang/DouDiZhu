@@ -1,7 +1,7 @@
 class LeftPlayerView extends PlayerBaseView {
 	public constructor() {
 		super();
-		this.bind(UIEventCode.SET_LEFT_PLAYER_DATA, UIEventCode.PLAYER_READY, UIEventCode.GAME_START);
+		this.bind(UIEventCode.SET_LEFT_PLAYER_DATA);
 	}
 	protected createChildren() {
 		super.createChildren();

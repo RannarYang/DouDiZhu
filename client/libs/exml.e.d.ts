@@ -62,6 +62,8 @@ declare class MyPlayerSkin extends eui.Skin{
 }
 declare class StartSkin extends eui.Skin{
 }
+declare class TableSkin extends eui.Skin{
+}
 declare class ButtonBlueSkin extends eui.Skin{
 }
 declare class ButtonBlueSmallSkin extends eui.Skin{
