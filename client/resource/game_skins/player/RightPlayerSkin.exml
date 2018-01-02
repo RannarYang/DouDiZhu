@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RightPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="RightPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 <e:Image id="playerImg" source="Farmer_png" x="960" y="185.22" anchorOffsetX="0" width="130" anchorOffsetY="0" height="161.56" scaleX="-1"/>
-<e:Component id="readyCom" width="181" height="72" x="687.74" y="284" currentState="hasReady">
-    <e:skinName>
-    <e:Skin states="toReady,hasReady" width="181" height="72">
-        <e:Label text="已准备" fontFamily="Microsoft YaHei" stroke="3" x.hasReady="46" y.hasReady="21" x="46" y="21" includeIn="hasReady"/>
-    </e:Skin>
-    </e:skinName>
-</e:Component>
+	<ns1:OperShowCom id="operShowCom" y="158" skinName="rightOperShowCom" right="160"/>
 </e:Skin>

@@ -2,7 +2,7 @@ class FightView extends UIBase {
 	private lblBeen: eui.Label;
 	private btnChat: eui.Button;
 	private chatView: ChatView;
-
+	private tableView: TableView;
 	private rightPlayer: RightPlayerView;
 	private leftPlayer: LeftPlayerView;
 	private userPlayer: UserPlayerView;
@@ -10,9 +10,14 @@ class FightView extends UIBase {
 	private socketMsg: SocketMsg = new SocketMsg();
 	public constructor() {
 		super();
+		this.bind(UIEventCode.GAME_START);
 	}
 	public execute(eventCode: number, msg: any ){
 		switch(eventCode) {
+			case UIEventCode.GAME_START:
+				this.tableView = new TableView();
+				this.addChild(this.tableView);
+				break;
 		}
 	}
 	private setPlayerReady(userId: number){
@@ -37,6 +42,7 @@ class FightView extends UIBase {
 		this.addChild(this.rightPlayer);
 		this.userPlayer = new UserPlayerView();
 		this.addChild(this.userPlayer);
+
 	}
 	private refresh() {
 		this.lblBeen.text = 'x ' + Models.gameModel.userDto.been;

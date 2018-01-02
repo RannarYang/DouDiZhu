@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="userOperShowCom" states="text,outcard,normal" currentState="normal" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+    <e:Group id="outArea" height="114" y="0" anchorOffsetX="0" width="262" horizontalCenter="0" visible.text="false" includeIn="text,outcard">
+                    <e:layout>
+                    <e:HorizontalLayout gap="-54"/>
+                    </e:layout>
+			<ns1:CardCtrl x="23" y="39" skinName="CardSkin"/>
+			<ns1:CardCtrl x="33" y="49" skinName="CardSkin"/>
+			<ns1:CardCtrl x="43" y="59" skinName="CardSkin"/>
+			<ns1:CardCtrl x="53" y="69" skinName="CardSkin"/>
+			<ns1:CardCtrl x="63" y="79" skinName="CardSkin"/>
+			<ns1:CardCtrl x="73" y="89" skinName="CardSkin"/>
+			<ns1:CardCtrl x="83" y="99" skinName="CardSkin"/>
+			<ns1:CardCtrl x="93" y="109" skinName="CardSkin"/>
+                    
+                </e:Group>
+	<e:Label id="operLabel" text="准备" includeIn="text" y="42" fontFamily="Microsoft YaHei" stroke="3" horizontalCenter="0"/>
+</e:Skin>

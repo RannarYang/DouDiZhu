@@ -22,6 +22,8 @@
   "author": "RannarYang",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^8.5.2"
+    "@types/node": "^8.5.2",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2"
   }
 }

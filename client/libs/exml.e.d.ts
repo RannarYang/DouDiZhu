@@ -82,6 +82,14 @@ declare class RightPlayerSkin extends eui.Skin{
 }
 declare class UserPlayerSkin extends eui.Skin{
 }
+declare class operComSkin extends eui.Skin{
+}
+declare class leftOperShowCom extends eui.Skin{
+}
+declare class rightOperShowCom extends eui.Skin{
+}
+declare class userOperShowCom extends eui.Skin{
+}
 declare class ChatSkin extends eui.Skin{
 }
 declare class LoginSkin extends eui.Skin{
