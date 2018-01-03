@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="operComSkin" states="ready,grab,outCard,normal"  width="440" height="72" currentState="ready" xmlns:e="http://ns.egret.com/eui">
     <e:Button id="btnReady" label="准备" skinName="ButtonBlueSmallSkin" includeIn="ready" horizontalCenter="0" name="btnReady"/>
-    <e:Button id="btnGrab" label="抢地主" skinName="ButtonBlueSmallSkin" includeIn="grab" left="0"/>
-    <e:Button id="btnUnGrab" label="不抢" skinName="ButtonBlueSmallSkin" y="0" includeIn="grab" right="0"/>
-    <e:Button id="btnOutCard" label="出牌" skinName="ButtonBlueSmallSkin" includeIn="outCard" left="0"/>
-    <e:Button id="btnPass" label="不出" skinName="ButtonBlueSmallSkin" y="0" includeIn="outCard" right="0"/>
+    <e:Button id="btnGrab" label="抢地主" skinName="ButtonBlueSmallSkin" includeIn="grab" left="0" name="btnGrab"/>
+    <e:Button id="btnUnGrab" label="不抢" skinName="ButtonBlueSmallSkin" y="0" includeIn="grab" right="0" name="btnUnGrab"/>
+    <e:Button id="btnOutCard" label="出牌" skinName="ButtonBlueSmallSkin" includeIn="outCard" left="0" name="btnOutCard"/>
+    <e:Button id="btnPass" label="不出" skinName="ButtonBlueSmallSkin" y="0" includeIn="outCard" right="0" name="btnPass"/>
 </e:Skin>

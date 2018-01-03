@@ -36,4 +36,19 @@ export default class FightCache {
 
         return room;
     }
+    public getRoomByUid(uid: number): FightRoom {
+        if(!!this.uidRoomIdDict[uid] == false) {
+            throw new Error("当前用户不在房间");
+        }
+        let roomId = this.uidRoomIdDict[uid];
+        let room: FightRoom = this.getRoom(roomId);
+        return room;
+    }
+    public getRoom(id: number): FightRoom {
+        if(!this.idRoomDict[id]) {
+            throw new Error('不存在这个房间');
+        }
+        let room : FightRoom = this.idRoomDict[id];
+        return room;
+    }
 }

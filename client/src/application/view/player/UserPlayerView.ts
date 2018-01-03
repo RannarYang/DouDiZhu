@@ -3,7 +3,7 @@ class UserPlayerView extends PlayerBaseView{
 	private operCom: OperCom;
 	public constructor() {
 		super();
-		this.bind(UIEventCode.PLAYER_READY, UIEventCode.GAME_START, UIEventCode.SHOW_GRAB_BUTTON);
+		this.bind(UIEventCode.PLAYER_READY, UIEventCode.GAME_START, UIEventCode.DEAL_GRAB_BUTTON);
 	}
 	protected createChildren() {
 		super.createChildren();
@@ -12,11 +12,12 @@ class UserPlayerView extends PlayerBaseView{
 	public execute(eventCode: number, msg: any) {
 		super.execute(eventCode, msg);
 		switch(eventCode) {
-			case UIEventCode.PLAYER_READY:
-				let userId = <number> msg;
-				// 如果是自身角色，就显示
-				if(Models.gameModel.userDto.id == userId) {
-					this.readyState();
+			case UIEventCode.PLAYER_READY: {
+					let userId = <number> msg;
+					// 如果是自身角色，就显示
+					if(Models.gameModel.userDto.id == userId) {
+						this.readyState();
+					}
 				}
 				break;
 			case UIEventCode.GAME_START:
@@ -24,8 +25,14 @@ class UserPlayerView extends PlayerBaseView{
 				this.addChild(playerCtrl);
 				this.operCom.normal();
 				break;
-			case UIEventCode.SHOW_GRAB_BUTTON:
-				this.operCom.grab();
+			case UIEventCode.DEAL_GRAB_BUTTON: {
+					let userId = <number> msg;
+					if(userId == Models.gameModel.userDto.id) {
+						this.operCom.grab();
+					} else {
+						this.operCom.normal();
+					}
+				}
 				break;
 		}
 	}
@@ -62,10 +69,12 @@ class UserPlayerView extends PlayerBaseView{
 		this.dispatch(AreaCode.NET, NetEventCode.SEND, this.socketMsg);
 	}
 	private onGrab() {
-
+		this.socketMsg.change(OpCode.FIGHT, FightCode.GRAB_LANDLORD_CREQ, true);
+		this.dispatch(AreaCode.NET, NetEventCode.SEND, this.socketMsg);
 	}
 	private onUnGrab() {
-
+		this.socketMsg.change(OpCode.FIGHT, FightCode.GRAB_LANDLORD_CREQ, false);
+		this.dispatch(AreaCode.NET, NetEventCode.SEND, this.socketMsg);
 	}
 	private onOutCard() {
 

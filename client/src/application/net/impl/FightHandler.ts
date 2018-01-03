@@ -10,6 +10,9 @@ class FightHandler extends HandlerBase {
 			case FightCode.TURN_GRAB_BRO:
 				this.turnGrabBro(<number>value);
 				break;
+			case FightCode.GRAB_LANDLORD_BRO:
+				this.grabLandlordBro(<GrabDto>value);
+				break;
 		}
 	}
 	private getCards(cardList: CardDto[]) {
@@ -24,9 +27,12 @@ class FightHandler extends HandlerBase {
 	 * 转换抢地主
 	 */
 	private turnGrabBro(userId: number) {
-
-		if(userId == Models.gameModel.userDto.id) {
-			this.dispatch(AreaCode.UI, UIEventCode.SHOW_GRAB_BUTTON, true);
-		}
+		this.dispatch(AreaCode.UI, UIEventCode.DEAL_GRAB_BUTTON, userId);
+	}
+	/**
+	 * 抢地主成功
+	 */
+	private grabLandlordBro(dto: GrabDto) {
+		// TODO 抢地主成功
 	}
 }

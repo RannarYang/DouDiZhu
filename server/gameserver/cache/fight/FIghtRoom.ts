@@ -3,6 +3,7 @@ import SocketMsg from "../../../base/SocketMsg";
 import PlayerDto from "../../../protocol/dto/fight/PlayerDto";
 import LibraryModel from "./LibraryModel";
 import CardDto from "../../../protocol/dto/fight/CardDto";
+import Identity from "../../../protocol/constant/Identity";
 
 export default class FightRoom {
     /**
@@ -109,6 +110,42 @@ export default class FightRoom {
      */
     public getFirstUid() {
         return this.playerList[0].userId;
+    }
+    /**
+     * 下一个出牌者
+     * @param currUid 当前出牌者
+     */
+    public getNextUid(currUid: number): number {
+        for(let i = 0; i < this.playerList.length; i++) {
+            if(this.playerList[i].userId == currUid) {
+                if(i == 2) {
+                    return this.playerList[0].userId;
+                } else {
+                    return this.playerList[i+1].userId;
+                }
+            }
+        }
+        throw new Error('并没有这个出牌者');
+    }
+    /**
+     * 设置地主身份
+     * @param user 
+     */
+    public setLandlord(userId: number): void {
+        for(let playerIndex = 0; playerIndex < this.playerList.length; playerIndex++) {
+            let player = this.playerList[playerIndex];
+            if(player.userId == userId) {
+                player.identity = Identity.LANDLORD;
+                // 给地主发牌
+                for(let i = 0; i < this.tableCardList.length; i++) {
+                    player.add(this.tableCardList[i]);
+                }
+                // 重新排序
+                this.sort();
+                // TODO 开始回合
+
+            }
+        }
     }
     
 }
