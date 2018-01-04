@@ -1,4 +1,4 @@
-export default class CardDto {
+class CardDto {
     public name: string;
     public color: number;
     public weight: number;
@@ -9,3 +9,4 @@ export default class CardDto {
         this.weight = weight;
     }
 }
+export default CardDto

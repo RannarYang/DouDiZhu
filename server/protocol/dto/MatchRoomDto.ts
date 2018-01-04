@@ -3,7 +3,7 @@ import UserDto from "./UserDto";
 /**
  * 房间数据对应的传输模型
  */
-export default class MatchRoomDto {
+class MatchRoomDto {
     /**
      * 用户id对应用户数据的传输模型
      */
@@ -84,3 +84,4 @@ export default class MatchRoomDto {
     }
 
 }
+export default MatchRoomDto

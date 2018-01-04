@@ -1,4 +1,4 @@
-export default class CardColor {
+class CardColor {
     public static NONE: number = 0;
     public static CLUB: number = 1; // 梅花
     public static HEART: number = 2; // 红桃
@@ -20,3 +20,4 @@ export default class CardColor {
         }
     }
 }
+export default CardColor

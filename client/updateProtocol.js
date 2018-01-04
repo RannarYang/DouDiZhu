@@ -4,10 +4,12 @@
 let fs = require('fs');
 let stat=fs.stat;
 let path = require('path');
+let exportReg = /.*export.*default.*/g;
+let importReg = /.*import.*from.*/g;
+let blankReg = /^(\s*)\r\n/g;
 let copy=function(src,dst){
     //读取目录
     fs.readdir(src,function(err,paths){
-        console.log(paths)
         if(err){
             throw err;
         }
@@ -22,9 +24,12 @@ let copy=function(src,dst){
                 }
                 
                 if(st.isFile()){
-                    readable=fs.createReadStream(_src);//创建读取流
-                    writable=fs.createWriteStream(_dst);//创建写入流
-                    readable.pipe(writable);
+                    fs.readFile(_src, 'utf8', function(err, data){
+                        let a = data.replace(exportReg, '').replace(importReg, '').replace(blankReg, '');
+                        fs.writeFile(_dst, a, function(err, data) {
+                            console.log(_dst);
+                        } );
+                    });
                 }else if(st.isDirectory()){
                     travel(_src,_dst,copy);
                 }

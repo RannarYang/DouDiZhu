@@ -1,7 +1,7 @@
 import Identity from "../../constant/Identity";
 import CardDto from "./CardDto";
 
-export default class PlayerDto {
+class PlayerDto {
     public userId: number;
     public identity: number;
     public cardList: CardDto[] = [];
@@ -19,3 +19,4 @@ export default class PlayerDto {
         this.cardList.push(card);
     }
 }
+export default PlayerDto

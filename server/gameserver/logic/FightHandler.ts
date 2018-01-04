@@ -38,7 +38,8 @@ export default class FightHandler implements IHandler {
             room.setLandlord(userId);
             let dto: GrabDto = new GrabDto(userId, room.tableCardList, room.getUserCards(userId));
             this.brocast(room, OpCode.FIGHT, FightCode.GRAB_LANDLORD_BRO, dto);
-            // TODO 发出一个出牌命令
+            // 发出一个出牌命令
+            this.brocast(room, OpCode.FIGHT, FightCode.TURN_DEAL_BRO, userId);
         } else {
             // 不抢
             let nextUid: number = room.getNextUid(userId);

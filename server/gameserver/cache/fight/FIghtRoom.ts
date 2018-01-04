@@ -4,6 +4,7 @@ import PlayerDto from "../../../protocol/dto/fight/PlayerDto";
 import LibraryModel from "./LibraryModel";
 import CardDto from "../../../protocol/dto/fight/CardDto";
 import Identity from "../../../protocol/constant/Identity";
+import RoundModel from "./RoundModel";
 
 export default class FightRoom {
     /**
@@ -30,6 +31,10 @@ export default class FightRoom {
      * 倍数
      */
     public multiple: number;
+    /**
+     * 回合管理
+     */
+    public roundModel: RoundModel;
 
     constructor(id: number, uidList: number[]) {
         this.id = id;
@@ -42,6 +47,7 @@ export default class FightRoom {
         this.libraryModel = new LibraryModel();
         this.tableCardList = [];
         this.multiple = 1;
+        this.roundModel = new RoundModel();
     }
     public init(uidList: number[]) {
         uidList.forEach((value, index) => {
@@ -142,8 +148,7 @@ export default class FightRoom {
                 }
                 // 重新排序
                 this.sort();
-                // TODO 开始回合
-
+                this.roundModel.start(userId);
             }
         }
     }

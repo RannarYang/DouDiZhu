@@ -1,4 +1,4 @@
-export default class CardWeight {
+class CardWeight {
     public static THREE : number = 3;
     public static FOUR : number = 4;
     public static FIVE : number = 5;
@@ -54,3 +54,4 @@ export default class CardWeight {
             }
         }
 }
+export default CardWeight 

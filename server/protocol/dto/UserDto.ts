@@ -1,7 +1,7 @@
 /**
  * 用户数据的传输类型
  */
-export default class UserDto {
+class UserDto {
     public id: number;
     public name: string; // 角色名字
     public been: number; // 豆子的数量
@@ -22,3 +22,4 @@ export default class UserDto {
         this.exp = exp;
     }
 }
+export default UserDto 

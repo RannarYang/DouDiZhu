@@ -1,6 +1,6 @@
 import CardDto from "./fight/CardDto";
 
-export default class GrabDto {
+class GrabDto {
     public userId: number;
     public tableCardList: CardDto[];
     public playerCardList: CardDto[];
@@ -11,3 +11,4 @@ export default class GrabDto {
         this.playerCardList = playerCardList;
     }
 }
+export default GrabDto;
