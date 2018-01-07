@@ -1,7 +1,12 @@
 class LeftPlayerView extends PlayerBaseView {
+	private cardImg: eui.Image;
 	public constructor() {
 		super();
-		this.bind(UIEventCode.SET_LEFT_PLAYER_DATA);
+		this.bind(
+			UIEventCode.SET_LEFT_PLAYER_DATA,
+			UIEventCode.ADD_LEFT_CARD,
+			UIEventCode.GAME_START
+		);
 	}
 	protected createChildren() {
 		super.createChildren();
@@ -17,6 +22,10 @@ class LeftPlayerView extends PlayerBaseView {
 			case UIEventCode.SET_LEFT_PLAYER_DATA:
 				this.userDto = <UserDto> message;
 				break;
+			case UIEventCode.ADD_LEFT_CARD:
+				// TODO: 三张地主牌
+				break;
+			
 		}
 	}
 	public onDispose() {

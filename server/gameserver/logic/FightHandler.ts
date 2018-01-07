@@ -9,6 +9,7 @@ import SocketMsg from "../../base/SocketMsg";
 import CardDto from "../../protocol/dto/fight/CardDto";
 import FightCode from "../../protocol/code/FightCode";
 import GrabDto from "../../protocol/dto/GrabDto";
+import DealDto from "../../protocol/dto/fight/DealDto";
 
 export default class FightHandler implements IHandler {
     private fightCache:FightCache = Caches.fight;
@@ -21,6 +22,12 @@ export default class FightHandler implements IHandler {
             case FightCode.GRAB_LANDLORD_CREQ: // true: 抢地主 false:不抢
                 let result: boolean = <boolean> value;
                 this.grabLandlord(client, result);
+                break;
+            case FightCode.DEAL_CREQ:
+                this.deal(client, <DealDto>value)
+                break;
+            case FightCode.PASS_CREQ:
+                this.pass(client);
                 break;
         }
     }
@@ -44,6 +51,72 @@ export default class FightHandler implements IHandler {
             // 不抢
             let nextUid: number = room.getNextUid(userId);
             this.brocast(room, OpCode.FIGHT, FightCode.TURN_GRAB_BRO, nextUid);
+        }
+    }
+    /**
+     * 出牌的处理
+     * @param client 
+     * @param dealDto 
+     */
+    private deal(client: ClientPeer, dealDto: DealDto) {
+        if(this.userCache.isOnline(client) == false) return;
+        let userId = this.userCache.getIdByClient(client);
+        if(userId != dealDto.userId) return;
+
+        let room: FightRoom = this.fightCache.getRoomByUid(userId);
+        // 玩家中途退出
+        if(room.leaveUidList.indexOf(userId) == -1) {
+            // 直接转换出牌
+            this.turn(room);
+        }
+        // 玩家还在
+        let canDeal: boolean = room.dealCard(dealDto.type, dealDto.weight, dealDto.length, dealDto.userId, dealDto.selectCardList);
+        if(canDeal == false) {
+            // 玩家的牌管不上上一玩家出的牌
+            client.send(OpCode.FIGHT, FightCode.DEAL_SRES, 0x3001);
+            return;
+        } else {
+            client.send(OpCode.FIGHT, FightCode.DEAL_SRES, 0);
+            let remainCardList = room.getPlayerModel(userId).cardList;
+            dealDto.remainCardList = remainCardList;
+            this.brocast(room, OpCode.FIGHT, FightCode.DEAL_BRO, dealDto);
+            // 检测下剩余的手牌，如果手牌为0，那就游戏结束了
+            if(remainCardList.length == 0) {
+                this.gameOver(userId, room);
+            } else {
+                this.turn(room);
+            }
+        }
+    }
+    /**
+     * 转换出牌
+     * @param room 
+     */
+    private turn(room: FightRoom) {
+        let nextUid = room.turn();
+        if(room.isOffline(nextUid)) {
+            // 如果下一个玩家掉线了，递归知道不掉线的玩家出牌为止
+            this.turn(room);
+        } else {
+            this.brocast(room, OpCode.FIGHT, FightCode.TURN_DEAL_BRO, nextUid);
+        }
+    }
+    private gameOver(userId: number, room: FightRoom) {
+
+    }
+    private pass(client: ClientPeer) {
+        if(this.userCache.isOnline(client) == false) return;
+        let userId: number = this.userCache.getIdByClient(client);
+        let room: FightRoom = this.fightCache.getRoomByUid(userId);
+        if(room.roundModel.biggestUid == userId) {
+            // 当前玩家是最大出牌者，没人管他，不能不出
+            client.send(OpCode.FIGHT, FightCode.PASS_SRES, 0x3002);
+            return;
+        } else {
+            // 可以不出
+            client.send(OpCode.FIGHT, FightCode.PASS_SRES, 0);
+            this.brocast(room, OpCode.FIGHT, FightCode.PASS_BRO, userId);
+            this.turn(room);
         }
     }
     public startFight(uidList: number[]) {

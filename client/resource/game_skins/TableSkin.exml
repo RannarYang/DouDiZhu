@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="TableSkin" width="960" height="163" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
+<e:Skin class="TableSkin" width="960" height="163" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
     <e:Image source="jujsidai_png" horizontalCenter="0" verticalCenter="0"/>
-	<e:Image source="CardBack_png" y="24" horizontalCenter="0"/>
-	<e:Image source="CardBack_png" y="24" horizontalCenter="-98"/>
-	<e:Image source="CardBack_png" y="24" horizontalCenter="97"/>
+	<e:Group id="cardGroup" y="24" horizontalCenter="0">
+		<e:Image source="CardBack_png" y="0" x="0"/>
+		<e:Image source="CardBack_png" y="0" x="98"/>
+		<e:Image source="CardBack_png" y="0" x="195"/>
+		<e:layout>
+			<e:HorizontalLayout gap="26"/>
+		</e:layout>
+	</e:Group>
 </e:Skin>

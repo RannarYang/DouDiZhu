@@ -5,6 +5,7 @@ import LibraryModel from "./LibraryModel";
 import CardDto from "../../../protocol/dto/fight/CardDto";
 import Identity from "../../../protocol/constant/Identity";
 import RoundModel from "./RoundModel";
+import CardType from "../../../protocol/constant/CardType";
 
 export default class FightRoom {
     /**
@@ -152,5 +153,95 @@ export default class FightRoom {
             }
         }
     }
-    
+    /**
+     * 获取玩家的数据模型
+     * @param userId 
+     */
+    public getPlayerModel(userId: number) : PlayerDto{
+        for(let i = 0, len = this.playerList.length; i < len; i++) {
+            let player = this.playerList[i];
+            if(player.userId == userId) {
+                return player;
+            }
+        }
+        throw new Error("没有这个玩家，获取不到数据");
+    }
+    /**
+     * 出牌（判断能不能压上一回合的牌）
+     * @param type 
+     * @param weight 
+     * @param length 
+     * @param userId 
+     * @param cardList 
+     */
+    public dealCard(type: number, weight: number, length: number, userId: number, cardList: CardDto[]){
+        let canDeal: boolean = false;
+        // 同种类型 大的牌管小的牌
+        if(type == this.roundModel.lastCardType && weight > this.roundModel.lastWeight) {
+            // 特殊类型：顺子要进行长度限制
+            if(type == CardType.STRAIGHT || type == CardType.DOUBLE_STRAIGHT || type == CardType.TRIPLE_STRAIGHT){
+                if(length == this.roundModel.lastLength) {
+                    canDeal = true;
+                }
+            } else {
+                canDeal = true;
+            }
+        } 
+        // 普通的炸弹，可以管任何不是炸弹的
+        else if(type==CardType.BOOM && (this.roundModel.lastCardType != CardType.BOOM && this.roundModel.lastCardType != CardType.JOKER_BOOM)){
+            canDeal = true;
+        }
+        // 王炸可以管任何牌
+        else if(type == CardType.JOKER_BOOM) {
+            canDeal = true;
+        }
+        // 第一次出牌 或者 当前自己是最大的出牌者
+        else if(userId == this.roundModel.biggestUid) {
+            canDeal = true;
+        }
+        // 出牌
+        if(canDeal) {
+            // 移除玩家的手牌
+            this.removeCards(userId, cardList);
+            // 可能会翻倍
+            if(type == CardType.BOOM) {
+                this.multiple *= 4;
+            } else if(type == CardType.JOKER_BOOM) {
+                this.multiple *= 8;
+            }
+            // 保存回合消息
+            this.roundModel.change(length, type, weight, userId);
+        }
+        return canDeal;
+    }
+    /**
+     * 移除卡牌
+     * @param userId 
+     * @param cardList 
+     */
+    private removeCards(userId: number, cardList: CardDto[]) {
+        let currList: CardDto[] = this.getUserCards(userId);
+        let list: CardDto[] = [];
+        for(let i = currList.length - 1; i >= 0; i--) {
+            let curCard = currList[i];
+            for(let j = 0; j < cardList.length; j++) {
+                if(cardList[j].name == curCard.name) {
+                    currList.splice(i, 1);
+                }
+            }
+        }
+    }
+    /**
+     * 转移出牌
+     */
+    public turn(): number {
+        let currUid = this.roundModel.currentUid;
+        let nextUid = this.getNextUid(currUid);
+        // 更改回合信息
+        this.roundModel.currentUid = nextUid;
+        return nextUid;
+    }
+    public isOffline(uid: number) {
+        return this.leaveUidList.indexOf(uid) != -1;
+    }
 }

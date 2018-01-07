@@ -3,7 +3,18 @@ class UserPlayerView extends PlayerBaseView{
 	private operCom: OperCom;
 	public constructor() {
 		super();
-		this.bind(UIEventCode.PLAYER_READY, UIEventCode.GAME_START, UIEventCode.DEAL_GRAB_BUTTON);
+		this.bind(
+			UIEventCode.PLAYER_READY, 
+			UIEventCode.GAME_START, 
+			UIEventCode.TURN_GRAB,
+			UIEventCode.ADD_MY_CARD,
+			UIEventCode.PLAYER_CHANGE_IDENTITY,
+			UIEventCode.GRAB_SUCCESS,
+			UIEventCode.TURN_DEAL,
+			UIEventCode.HIDE_DEAL_BUTTON,
+			UIEventCode.UPDATE_SHOW_DESK_CARDS,
+			UIEventCode.UPDATE_SHOW_DESK_PASS
+		);
 	}
 	protected createChildren() {
 		super.createChildren();
@@ -20,17 +31,63 @@ class UserPlayerView extends PlayerBaseView{
 					}
 				}
 				break;
-			case UIEventCode.GAME_START:
-				let playerCtrl = new MyPlayerCtrl();
-				this.addChild(playerCtrl);
-				this.operCom.normal();
+			case UIEventCode.GAME_START: {
+					let playerCtrl = new MyPlayerCtrl();
+					this.addChild(playerCtrl);
+					this.operCom.normal();
+				}
 				break;
-			case UIEventCode.DEAL_GRAB_BUTTON: {
+			case UIEventCode.TURN_GRAB: {
 					let userId = <number> msg;
 					if(userId == Models.gameModel.userDto.id) {
 						this.operCom.grab();
 					} else {
 						this.operCom.normal();
+					}
+				}
+				break;
+			case UIEventCode.PLAYER_CHANGE_IDENTITY: {
+					let userId: number = <number> msg;
+					if(userId == Models.gameModel.userDto.id) { 
+						this.setIdentity(Identity.LANDLORD);
+					}
+				}
+				break;
+			case UIEventCode.ADD_MY_CARD:
+				// TODO: 更新cardNum数目
+				break;
+			case UIEventCode.GRAB_SUCCESS: {
+					let userId: number = <number> msg;
+					if(userId == Models.gameModel.userDto.id) {
+						this.operCom.normal();
+					}
+				}
+				break;
+			case UIEventCode.TURN_DEAL: {
+					let userId = <number> msg;
+					if(userId == Models.gameModel.userDto.id) {
+						this.operCom.outCard();
+					} else {
+						this.operCom.normal();
+					}
+				}
+				break;
+			case UIEventCode.HIDE_DEAL_BUTTON: {
+					this.operCom.normal();
+				}
+				break;
+			case UIEventCode.UPDATE_SHOW_DESK_CARDS: {
+					let dealDto: DealDto = <DealDto>msg;
+					if(dealDto.userId == Models.gameModel.userDto.id) {
+						this.operShowCom.outCard(dealDto.selectCardList);
+					}
+					
+				}
+				break;
+			case UIEventCode.UPDATE_SHOW_DESK_PASS: {
+					let userId: number = <number> msg;
+					if(userId == Models.gameModel.userDto.id) {
+						this.operShowCom.pass();
 					}
 				}
 				break;
@@ -77,10 +134,11 @@ class UserPlayerView extends PlayerBaseView{
 		this.dispatch(AreaCode.NET, NetEventCode.SEND, this.socketMsg);
 	}
 	private onOutCard() {
-
+		this.dispatch(AreaCode.UI, UIEventCode.DEAL_CARD, null);
 	}
 	private onPass() {
-
+		this.socketMsg.change(OpCode.FIGHT, FightCode.PASS_CREQ, null);
+		this.dispatch(AreaCode.NET, NetEventCode.SEND, this.socketMsg);
 	}
 	public onDispose() {
 		

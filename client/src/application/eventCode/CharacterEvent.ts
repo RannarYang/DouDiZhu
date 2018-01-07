@@ -1,5 +1,0 @@
-enum CharacterEvent {
-	INIT_MY_CARD,
-	INIT_LEFT_CARD,
-	INIT_RIGHT_CARD
-}

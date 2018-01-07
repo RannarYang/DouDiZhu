@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="UserPlayerSkin" width="960" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
-    <e:Image source="Farmer_png" x="62.81" y="431.22" anchorOffsetX="0" width="130" anchorOffsetY="0" height="161.56" locked="true"/>
+<e:Skin class="UserPlayerSkin" width="960" height="640" currentState="ready" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" states="ready,start" >
+    <e:Image id="playerImg" source="Farmer_png" x="62.81" y="431.22" anchorOffsetX="0" width="130" anchorOffsetY="0" height="161.56"/>
 	<ns1:OperShowCom id="operShowCom" y="336" skinName="userOperShowCom" horizontalCenter="0"/>
 	<ns1:OperCom id="operCom" y="440" skinName="operComSkin" horizontalCenter="0"/>
+	<e:Label id="cardNum" text="剩余：17张" x="20" y="604" fontFamily="Microsoft YaHei" includeIn="start"/>
 </e:Skin>

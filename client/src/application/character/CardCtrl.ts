@@ -1,9 +1,9 @@
 /**
  * 卡牌控制类
  */
-class CardCtrl extends CharacterBase{
+class CardCtrl extends UIBase{
 	private mCardDto: CardDto;
-	private get cardDto() {
+	public get cardDto() {
 		return this.mCardDto;
 	}
 	/**
@@ -13,6 +13,9 @@ class CardCtrl extends CharacterBase{
 	public set selected(value: boolean) {
 		this.mSelected = value;
 		this.currentState = this.mSelected == true ? 'selected' : 'normal';
+	}
+	public get selected() {
+		return this.mSelected;
 	}
 	/**
 	 * 卡牌是不是玩家自己的
