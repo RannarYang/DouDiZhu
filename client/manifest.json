@@ -18,7 +18,7 @@
 		"bin-debug/application/scenes/SceneBase.js",
 		"bin-debug/application/view/player/PlayerBaseView.js",
 		"bin-debug/framework/ManagerBase.js",
-		"bin-debug/application/protocol/dto/UserDto.js",
+		"bin-debug/application/protocol/dto/fight/CardDto.js",
 		"bin-debug/application/eventCode/NetEventCode.js",
 		"bin-debug/application/eventCode/UIEventCode.js",
 		"bin-debug/application/manager/NoticeManager.js",
@@ -49,9 +49,10 @@
 		"bin-debug/application/protocol/dto/AccountDto.js",
 		"bin-debug/application/protocol/dto/GrabDto.js",
 		"bin-debug/AssetAdapter.js",
-		"bin-debug/framework/utils/vec2.js",
-		"bin-debug/application/protocol/dto/fight/CardDto.js",
+		"bin-debug/application/protocol/dto/UserDto.js",
+		"bin-debug/LoadingUI.js",
 		"bin-debug/application/protocol/dto/fight/DealDto.js",
+		"bin-debug/application/protocol/dto/fight/OverDto.js",
 		"bin-debug/application/protocol/dto/fight/PlayerDto.js",
 		"bin-debug/application/scenes/IScene.js",
 		"bin-debug/Main.js",
@@ -73,6 +74,7 @@
 		"bin-debug/application/view/player/oper/OperCom.js",
 		"bin-debug/application/view/player/oper/OperShowCom.js",
 		"bin-debug/application/view/popup/LoginPanel.js",
+		"bin-debug/application/view/popup/OverPanel.js",
 		"bin-debug/application/view/popup/RegistPanel.js",
 		"bin-debug/application/view/popup/SettingPanel.js",
 		"bin-debug/framework/AreaCode.js",
@@ -87,6 +89,6 @@
 		"bin-debug/framework/utils/NumberUtil.js",
 		"bin-debug/framework/utils/StringUtil.js",
 		"bin-debug/framework/utils/TimeUtil.js",
-		"bin-debug/LoadingUI.js"
+		"bin-debug/framework/utils/vec2.js"
 	]
 }

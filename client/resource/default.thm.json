@@ -51,6 +51,7 @@
     "resource/game_skins/player/operComSkin.exml",
     "resource/game_skins/player/UserPlayerSkin.exml",
     "resource/game_skins/popup/LoginSkin.exml",
+    "resource/game_skins/popup/OverSkin.exml",
     "resource/game_skins/popup/RegistSkin.exml",
     "resource/game_skins/popup/SettingSkin.exml"
   ]

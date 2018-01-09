@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OverSkin" width="584" height="439" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group bottom="25" left="25" right="25" top="25">
+		<e:Image scale9Grid="15,15,96,96" left="0" right="0" top="0" bottom="0" source="goods_BG2_png"/>
+		<e:Label id="lblWinIdentity" text="地主胜利" y="48.52" fontFamily="Microsoft YaHei" size="59" textAlign="center" horizontalCenter="0" stroke="2"/>
+		<e:Button id="btnBack" label="返回主菜单" y="270.73" skinName="ButtonSmallSkin" horizontalCenter="0"/>
+		<e:Label id="lblWinBeen" text="欢乐豆：+1000" y="164.5" fontFamily="Microsoft YaHei" size="57" textColor="0xc61515" horizontalCenter="0" stroke="2" strokeColor="0xffffff"/>
+	</e:Group>
+</e:Skin>

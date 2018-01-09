@@ -10,6 +10,8 @@ import CardDto from "../../protocol/dto/fight/CardDto";
 import FightCode from "../../protocol/code/FightCode";
 import GrabDto from "../../protocol/dto/GrabDto";
 import DealDto from "../../protocol/dto/fight/DealDto";
+import UserModel from "../model/UserModel";
+import OverDto from "../../protocol/dto/fight/OverDto";
 
 export default class FightHandler implements IHandler {
     private fightCache:FightCache = Caches.fight;
@@ -101,9 +103,74 @@ export default class FightHandler implements IHandler {
             this.brocast(room, OpCode.FIGHT, FightCode.TURN_DEAL_BRO, nextUid);
         }
     }
+    /**
+     * 游戏结束
+     * @param userId 
+     * @param room 
+     */
     private gameOver(userId: number, room: FightRoom) {
+        // 获取获胜的身份，所有玩家的id
+        let winIdentity = room.getPlayerIdentity(userId);
+        let winBeen = room.multiple * 1000;
+        // 给胜利的玩家添加胜场
+        let winUids = room.getSameIdentityUids(winIdentity);
+        for(let i = 0, len = winUids.length; i < len; i++) {
+            let um: UserModel = this.userCache.getModelById(winUids[i]);
+            um.winCount++;
+            um.been += winBeen;
+            um.exp += 100;
+            let maxExp = um.lv * 100;
+            while(maxExp <= um.exp) {
+                um.lv++;
+                um.exp -= maxExp;
+                maxExp = um.lv * 100;
+            }
+            this.userCache.update(um);
+        }
+        // 给失败的玩家添加负场
+        let loseUids : number[] = room.getDifferentIdentityUids(winIdentity);
+        for(let i = 0, len = loseUids.length; i < len; i++) {
+            let um: UserModel = this.userCache.getModelById(loseUids[i]);
+            um.loseCount++;
+            um.been -= winBeen;
+            um.exp += 10;
+            let maxExp = um.lv * 100;
+            while(maxExp <= um.exp) {
+                um.lv++;
+                um.exp -= maxExp;
+                maxExp = um.loseCount * 100;
+            }
+            this.userCache.update(um);
+        }
+        // 给逃跑玩家添加逃跑场次
+        for(let i = 0, len = room.leaveUidList.length; i < len; i++) {
+            let um: UserModel = this.userCache.getModelById(room.leaveUidList[i]);
+            um.runCount++;
+            um.been -= (winBeen) * 3;
+            um.been += 0;
+            let maxExp = um.lv * 100;
+            while(maxExp <= um.exp) {
+                um.lv++;
+                um.exp -= maxExp;
+                maxExp = um.lv * 100;
+            }
+            this.userCache.update(um);
+        }
 
+        // 给客户端发送消息
+        let dto: OverDto = new OverDto();
+        dto.winIdentity = winIdentity;
+        dto.winUidList = winUids;
+        dto.beenCount = winBeen;
+        this.brocast(room, OpCode.FIGHT, FightCode.OVER_BRO, dto);
+        
+        // 缓存层销毁房间数据
+        this.fightCache.destroy(room);
     }
+    /**
+     * pass
+     * @param client 
+     */
     private pass(client: ClientPeer) {
         if(this.userCache.isOnline(client) == false) return;
         let userId: number = this.userCache.getIdByClient(client);

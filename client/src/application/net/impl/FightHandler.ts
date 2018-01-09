@@ -28,6 +28,9 @@ class FightHandler extends HandlerBase {
 			case FightCode.PASS_BRO:
 				this.passBro(<number>value);
 				break;
+			case FightCode.OVER_BRO:
+				this.overBro(<OverDto>value);
+				break;
 		}
 	}
 	private getCards(cardList: CardDto[]) {
@@ -112,5 +115,12 @@ class FightHandler extends HandlerBase {
 	private passBro(userId: number) {
 		// 更新桌子上的显示
 		this.dispatch(AreaCode.UI, UIEventCode.UPDATE_SHOW_DESK_PASS, userId);
+	}
+	/**
+	 * 结束广播
+	 */
+	private overBro(dto: OverDto) {
+		PopUpManager.getInstance().addPopUp(OverPanel, PopUpShowMode.Normal, PopUpLucencyType.Lucency, true);
+		this.dispatch(AreaCode.UI, UIEventCode.UPDATE_OVER_PANEL, dto);
 	}
 }

@@ -22,4 +22,6 @@ enum FightCode {
     PASS_SRES,
     /**服务器服务器广播不出牌的结果 */
     PASS_BRO,
+    /**服务器广播游戏结束 */
+    OVER_BRO
 }

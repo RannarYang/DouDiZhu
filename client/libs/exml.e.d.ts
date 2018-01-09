@@ -94,6 +94,8 @@ declare class ChatSkin extends eui.Skin{
 }
 declare class LoginSkin extends eui.Skin{
 }
+declare class OverSkin extends eui.Skin{
+}
 declare class RegistSkin extends eui.Skin{
 }
 declare class SettingSkin extends eui.Skin{

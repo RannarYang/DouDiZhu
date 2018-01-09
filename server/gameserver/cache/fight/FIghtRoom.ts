@@ -241,7 +241,46 @@ export default class FightRoom {
         this.roundModel.currentUid = nextUid;
         return nextUid;
     }
+    /**
+     * 玩家是否离线
+     * @param uid 
+     */
     public isOffline(uid: number) {
         return this.leaveUidList.indexOf(uid) != -1;
+    }
+    /**
+     * 获取用户身份
+     * @param userId 
+     */
+    public getPlayerIdentity(userId: number): number {
+        return this.getPlayerModel(userId).identity;
+    }
+    /**
+     * 获取相同个身份的用户id
+     * @param identity 
+     */
+    public getSameIdentityUids(identity: number): number[] {
+        let uids: number[] = [];
+        for(let i = 0, len = this.playerList.length; i < len; i++) {
+            let player = this.playerList[i];
+            if(player.identity == identity) {
+                uids.push(player.userId);
+            }
+        }
+        return uids;
+    }
+    /**
+     * 获取不同身份的用户id
+     * @param identity 
+     */
+    public getDifferentIdentityUids(identity: number) : number[]{
+        let uids: number[] = [];
+        for(let i = 0, len = this.playerList.length; i < len; i++) {
+            let player = this.playerList[i];
+            if(player.identity != identity) {
+                uids.push(player.userId);
+            }
+        }
+        return uids;
     }
 }
