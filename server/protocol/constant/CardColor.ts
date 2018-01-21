@@ -4,9 +4,9 @@ class CardColor {
     public static HEART: number = 2; // 红桃
     public static SPADE: number = 3; // 黑桃
     public static SQUARE: number = 4; // 方片
-    
+
     public static getString(color: number) : string {
-        switch(color) {
+        switch (color) {
             case CardColor.CLUB:
                 return 'Club';
             case CardColor.HEART:
@@ -20,4 +20,4 @@ class CardColor {
         }
     }
 }
-export default CardColor
+export default CardColor;

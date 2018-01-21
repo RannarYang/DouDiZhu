@@ -1,6 +1,6 @@
-import CardDto from "./CardDto";
-import CardType from "../../constant/CardType";
-import CardWeight from "../../constant/CardWeight";
+import CardDto from './CardDto';
+import CardType from '../../constant/CardType';
+import CardWeight from '../../constant/CardWeight';
 
 class DealDto {
     /**选中要出的牌 */
@@ -17,11 +17,11 @@ class DealDto {
     public isRegular: boolean;
     /**剩余的手牌 */
     public remainCardList: CardDto[];
-    
+
     /**
      * 出牌模型构造函数
-     * @param cardList 
-     * @param uid 
+     * @param cardList
+     * @param uid
      */
     constructor(cardList: CardDto[], uid: number) {
         this.selectCardList = cardList;
@@ -29,7 +29,7 @@ class DealDto {
         this.type = CardType.getCardType(cardList);
         this.weight = CardWeight.getWeight(cardList, this.type);
         this.userId = uid;
-        this.isRegular = (this.type != CardType.NONE);
+        this.isRegular = (this.type !== CardType.NONE);
         this.remainCardList = [];
     }
 }

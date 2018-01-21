@@ -6,6 +6,10 @@ import SocketMsg from './SocketMsg';
 
 export default class ServerPeer {
     /**
+     * 应用层
+     */
+    public application: IApplication;
+    /**
      * 服务器端的server对象
      */
     private serverSocket: ws.Server;
@@ -13,14 +17,11 @@ export default class ServerPeer {
      * 客户端对象的连接池
      */
     private clientPeerPool: ClientPeerPool;
-    /**
-     * 应用层
-     */
-    public application: IApplication;
+
     constructor() {}
     /**
      * 设置应用层
-     * @param app 
+     * @param app
      */
     public setApplication(app: IApplication) {
         this.application = app;
@@ -32,24 +33,24 @@ export default class ServerPeer {
      */
     public start(port: number, peerCount: number) {
         try {
-            this.serverSocket = new ws.Server({port:port});
+            this.serverSocket = new ws.Server({port: port});
             this.clientPeerPool = new ClientPeerPool();
             let tmpClientPeer: ClientPeer = null;
-            for(let i = 0; i < peerCount; i++) {
+            for (let i = 0; i < peerCount; i++) {
                 tmpClientPeer = new ClientPeer();
                 tmpClientPeer.receiveCompleted = this.receiveCompleted.bind(this);
                 this.clientPeerPool.enqueue(tmpClientPeer);
             }
             console.log('===== 服务器启动 =====');
             // 等待客户端的连接
-            this.serverSocket.on('connection', (clientSocket, request)=>{
-                this.processAccept(clientSocket, request);
+            this.serverSocket.on('connection', (clientSocket) => {
+                this.processAccept(clientSocket);
             });
-        } catch(e) {
+        } catch (e) {
             console.log(e);
         }
     }
-    private processAccept(clientSocket: ws, request) {
+    private processAccept(clientSocket: ws) {
         let client: ClientPeer = this.clientPeerPool.dequeue();
         client.socket = clientSocket;
         this.startReceive(client);
@@ -57,13 +58,12 @@ export default class ServerPeer {
     }
     private startReceive(client: ClientPeer) {
         try {
-            client.socket.on('message', (data: Buffer)=>{
+            client.socket.on('message', (data: Buffer) => {
                 this.processReceive(client, data);
-            })
-        } catch(e) {
+            });
+        } catch (e) {
             console.log(e);
         }
-        
     }
     private processReceive(client: ClientPeer, data: Buffer) {
         client.startReceive(data);
@@ -77,23 +77,23 @@ export default class ServerPeer {
     }
     private monitorDisconnect(client: ClientPeer) {
         try {
-            client.socket.on('disconnect',()=>{
-                this.disconnect(client)
+            client.socket.on('disconnect', () => {
+                this.disconnect(client);
             });
-        } catch(e) {
+        } catch (e) {
             console.log(e);
         }
     }
     private disconnect(client: ClientPeer) {
         try {
-            if(client == null) {
-                console.log("当前指定的客户端连接对象为空，无法断开连接");
+            if (client == null) {
+                console.log('当前指定的客户端连接对象为空，无法断开连接');
             }
-            console.log("客户端断开连接");
+            console.log('客户端断开连接');
             // 通知应用层，这个客户端断开连接
             this.application.onDisconnect(client);
-            client.disconnect()
-        } catch(e) {
+            client.disconnect();
+        } catch (e) {
             console.log(e);
         }
     }

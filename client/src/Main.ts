@@ -36,7 +36,7 @@ class Main extends eui.UILayer {
     protected createChildren(): void {
         super.createChildren();
 
-        egret.lifecycle.addLifecycleListener((context) => {
+        egret.lifecycle.addLifecycleListener(() => {
             // custom lifecycle plugin
         })
 
@@ -66,7 +66,7 @@ class Main extends eui.UILayer {
      * 配置文件加载完成,开始预加载皮肤主题资源和preload资源组。
      * Loading of configuration file is complete, start to pre-load the theme configuration file and the preload resource group
      */
-    private onConfigComplete(event: RES.ResourceEvent): void {
+    private onConfigComplete(): void {
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         // load skin theme configuration file, you can manually modify the file. And replace the default skin.
         //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。

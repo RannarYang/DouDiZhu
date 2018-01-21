@@ -1,7 +1,7 @@
-import AccountCache from "./AccountCache";
-import UserCache from "./UserCache";
-import MatchCache from "./match/MatchCache";
-import FightCache from "./fight/FightCache";
+import AccountCache from './AccountCache';
+import UserCache from './UserCache';
+import MatchCache from './match/MatchCache';
+import FightCache from './fight/FightCache';
 
 export default class Caches {
     public static account: AccountCache = new AccountCache();

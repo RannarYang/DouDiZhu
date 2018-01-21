@@ -2,28 +2,31 @@ import ws = require('ws');
 import SocketMsg from './SocketMsg';
 import EncodeTool from './EncodeTool';
 export default class ClientPeer {
+    /**
+     * 一旦接受到数据，就存在缓存区里
+     */
+    public dataCache: Buffer = new Buffer(0);
     private mSocket: ws;
+    /**
+     * 发送的消息的一个队列
+     */
+    private sendQueue: Buffer[] = [];
+    private isSendProcess: boolean = false;
     public get socket(): ws {
         return this.mSocket;
     }
     public set socket(value: ws) {
         this.mSocket = value;
     }
-    private mReceiveCompleted: (clientPeer: ClientPeer, msg: SocketMsg)=>void;
-    public set receiveCompleted(receiveCompleted: (clientPeer: ClientPeer, msg: SocketMsg)=>void) {
+    private mReceiveCompleted: (clientPeer: ClientPeer, msg: SocketMsg) => void;
+    public set receiveCompleted(receiveCompleted: (clientPeer: ClientPeer, msg: SocketMsg) => void) {
         this.mReceiveCompleted = receiveCompleted;
     }
-    /**
-     * 一旦接受到数据，就存在缓存区里
-     */
-    public dataCache: Buffer = new Buffer(0);
     /**
      * 是否正在处理数据
      */
     private isReceiveProcess: boolean = false;
- 
     constructor() {
-        
     }
     /**
      * 自身处理数据包
@@ -31,7 +34,7 @@ export default class ClientPeer {
     public startReceive(packet: Buffer) {
         // TODO 将packet缓存到dataCache中
         this.dataCache = Buffer.concat([this.dataCache, packet]);
-        if(!this.isReceiveProcess) {
+        if (!this.isReceiveProcess) {
             this.processReceive();
         }
     }
@@ -46,29 +49,6 @@ export default class ClientPeer {
         this.mSocket.close();
         this.mSocket = null;
     }
-    private processReceive() {
-        this.isReceiveProcess = true;
-        // 解析数据包
-        let msg: SocketMsg = EncodeTool.decodePacket(this);
-        if(msg == null) {
-            this.isReceiveProcess = false;
-            return;
-        }
-        // 回调给上层
-        if(this.mReceiveCompleted) {
-            this.mReceiveCompleted(this, msg);
-        }
-
-        // 如果还有需要解析的数据，则继续解析
-        this.processReceive();
-        
-    }
-
-    /**
-     * 发送的消息的一个队列
-     */
-    private sendQueue: Buffer[] = [];
-    private isSendProcess: boolean = false;
     /**
      * 发送网络消息
      */
@@ -82,15 +62,32 @@ export default class ClientPeer {
     }
     public saveMsg(packet) {
         this.sendQueue.push(packet);
-        if(!this.isSendProcess) {
-            this.dealSend()
+        if (!this.isSendProcess) {
+            this.dealSend();
         }
     }
+    private processReceive() {
+        this.isReceiveProcess = true;
+        // 解析数据包
+        let msg: SocketMsg = EncodeTool.decodePacket(this);
+        if (msg == null) {
+            this.isReceiveProcess = false;
+            return;
+        }
+        // 回调给上层
+        if (this.mReceiveCompleted) {
+            this.mReceiveCompleted(this, msg);
+        }
+
+        // 如果还有需要解析的数据，则继续解析
+        this.processReceive();
+    }
+
     /**
      * 处理发送的消息
      */
     private dealSend() {
-        if(this.sendQueue.length == 0) {
+        if (this.sendQueue.length === 0) {
             this.isSendProcess = false;
             return;
         }

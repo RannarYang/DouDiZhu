@@ -9,7 +9,9 @@
             "es2015.promise"
         ],
         "sourceMap": true,
-        "types":[]
+        "types":[],
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     },
     "exclude": [
         "node_modules"

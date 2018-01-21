@@ -131,7 +131,7 @@ class ErrorSprite extends eui.Component {
 		this.once(egret.Event.ADDED_TO_STAGE, this.onAdd, this);
 		this.once(egret.Event.REMOVED_FROM_STAGE, this.onRemoved, this);
 	}
-	private onAdd(evt: egret.Event) {
+	private onAdd() {
 		this.tweening = 1;
 		egret.Tween.get(this).to({y: this.y - 150}, 1200).call(()=>{
 			if(this.tweening == 1) {
@@ -153,7 +153,7 @@ class ErrorSprite extends eui.Component {
 			Utils.DisplayUtil.removeFromParent(this);
 		})
 	}
-	private onRemoved(evt: egret.Event) {
+	private onRemoved() {
 		egret.Tween.removeTweens(this);
 	}
 	public removeTween(): void {
@@ -197,7 +197,7 @@ class NoticeSprite extends eui.Component {
         this.once(egret.Event.REMOVED_FROM_STAGE, this.onRemoved, this);
     }
 
-	private onAdd(evt: egret.Event): void {
+	private onAdd(): void {
 		this.tweening = 1;
 		egret.Tween.get(this).to({y: this.y - 150}, 120).call(()=>{
 			if(this.tweening == 1) {
@@ -226,7 +226,7 @@ class NoticeSprite extends eui.Component {
 			this.tweening = 2;
 		}
 	}
-	private onRemoved(evt: egret.Event): void {
+	private onRemoved(): void {
 		egret.Tween.removeTweens(this);
 	}
 	private removeNow(): void {
@@ -258,7 +258,7 @@ class RollSprite extends eui.Component {
         this.once(egret.Event.REMOVED_FROM_STAGE, this.onRemoved, this);
     }
 
-    private onAdd(evt: egret.Event): void {
+    private onAdd(): void {
         let lbl = this.lbl;
         let startX = lbl.x;
         let endX = -Math.ceil(lbl.textWidth);
@@ -268,7 +268,7 @@ class RollSprite extends eui.Component {
         });
     }
 
-    private onRemoved(evt: egret.Event): void {
+    private onRemoved(): void {
         egret.Tween.removeTweens(this);
     }
 }

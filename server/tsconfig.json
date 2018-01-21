@@ -12,7 +12,9 @@
         "types":[],
         "noImplicitAny": false,
         "module": "commonjs",
-        "removeComments": true
+        "removeComments": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     },
     "exclude": [
         "node_modules"

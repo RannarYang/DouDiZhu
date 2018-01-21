@@ -1,6 +1,6 @@
-import ClientPeer from "../../../base/ClientPeer";
-import MatchRoom from "./MatchRoom";
-import ConcurrentInt from "../../../base/concurrent/ConcurrentInt";
+import ClientPeer from '../../../base/ClientPeer';
+import MatchRoom from './MatchRoom';
+import ConcurrentInt from '../../../base/concurrent/ConcurrentInt';
 
 export default class MatchCache {
     /**
@@ -21,22 +21,24 @@ export default class MatchCache {
     private id: ConcurrentInt = new ConcurrentInt(0);
     /**
      * 进入匹配房间
-     * @param userId 
-     * @param client 
+     * @param userId
+     * @param client
      */
     public enter(userId: number, client: ClientPeer): MatchRoom {
-        for(let id in this.idModelDict) {
-            let matchRoom = this.idModelDict[id];
-            if(matchRoom.isFull()) {
-                continue;
+        for (let id in this.idModelDict) {
+            if (this.idModelDict[id]) {
+                let matchRoom = this.idModelDict[id];
+                if (matchRoom.isFull()) {
+                    continue;
+                }
+                matchRoom.enter(userId, client);
+                this.uidRoomIdDict[userId] = matchRoom.id;
+                return matchRoom;
             }
-            matchRoom.enter(userId, client);
-            this.uidRoomIdDict[userId] = matchRoom.id;
-            return matchRoom;
         }
         // 没有等待的房间
         let room: MatchRoom = null;
-        if(this.roomQueue.length > 0) {
+        if (this.roomQueue.length > 0) {
             room = this.roomQueue.pop();
         } else {
             room = new MatchRoom(this.id.addGet());
@@ -51,9 +53,8 @@ export default class MatchCache {
         let roomId = this.uidRoomIdDict[userId];
         let room: MatchRoom = this.idModelDict[roomId];
         room.leave(userId);
-        
         delete this.uidRoomIdDict[userId];
-        if(room.isEmpty()) {
+        if (room.isEmpty()) {
             delete this.idModelDict[roomId];
             this.roomQueue.push(room);
         }
@@ -61,14 +62,14 @@ export default class MatchCache {
     }
     /**
      * 判断用户是否在匹配的房间内
-     * @param userId 
+     * @param userId
      */
-    public isMatching(userId: number) : boolean{
+    public isMatching(userId: number) : boolean {
         return !!this.uidRoomIdDict[userId];
     }
     /**
      * 获取玩家所在的等待房间
-     * @param userId 
+     * @param userId
      */
     public getRoom(userId: number): MatchRoom {
         let roomId = this.uidRoomIdDict[userId];
@@ -76,12 +77,14 @@ export default class MatchCache {
     }
     /**
      * 摧毁房间
-     * @param room 
+     * @param room
      */
     public destroy(room: MatchRoom) {
         delete this.idModelDict[room.id];
-        for(let userId in room.uidClientDict) {
-            delete this.uidRoomIdDict[userId];
+        for (let userId in room.uidClientDict) {
+            if (room.uidClientDict[userId]) {
+                delete this.uidRoomIdDict[userId];
+            }
         }
         // 清空数据
         room.uidClientDict = {};

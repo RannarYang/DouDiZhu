@@ -1,5 +1,4 @@
 class LeftPlayerView extends PlayerBaseView {
-	private cardImg: eui.Image;
 	public constructor() {
 		super();
 		this.bind(

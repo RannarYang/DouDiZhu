@@ -6,9 +6,7 @@ class MyPlayerCtrl extends UIBase {
 		this.mCards = cards;
 		this.updateCardsCtrl();
 	}
-	private sortsHandCard() {
-		
-	}
+
 	public constructor() {
 		super();
 		this.bind(

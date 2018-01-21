@@ -9,7 +9,7 @@ enum FightCode {
     /**服务器广播抢地主的结果 */
     GRAB_LANDLORD_BRO,
     /**服务器广播转换出牌的结果 */
-    TURN_DEAL_BRO, 
+    TURN_DEAL_BRO,
     /**出牌请求 */
     DEAL_CREQ,
     /**服务器给客户端出牌的响应 */

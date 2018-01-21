@@ -24,9 +24,9 @@ export default class NetMsgCenter implements IApplication {
         this.fightHandler.onDisconnect(client);
     }
     public onReceive(client: ClientPeer, msg: SocketMsg) {
-        switch(msg.opCode) {
+        switch (msg.opCode) {
             case OpCode.ACCOUNT:
-                this.accountHandler.onReceive(client, msg.subCode, msg.value)
+                this.accountHandler.onReceive(client, msg.subCode, msg.value);
                 break;
             case OpCode.USER:
                 this.userHandler.onReceive(client, msg.subCode, msg.value);
@@ -37,6 +37,8 @@ export default class NetMsgCenter implements IApplication {
             case OpCode.FIGHT:
                 this.fightHandler.onReceive(client, msg.subCode, msg.value);
                 break;
+            default:
+                break;
         }
     }
-} 
+}

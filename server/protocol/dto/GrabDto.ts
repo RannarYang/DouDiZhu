@@ -1,4 +1,4 @@
-import CardDto from "./fight/CardDto";
+import CardDto from './fight/CardDto';
 
 class GrabDto {
     public userId: number;

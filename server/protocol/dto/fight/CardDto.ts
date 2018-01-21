@@ -9,4 +9,4 @@ class CardDto {
         this.weight = weight;
     }
 }
-export default CardDto
+export default CardDto;

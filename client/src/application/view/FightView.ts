@@ -7,7 +7,6 @@ class FightView extends UIBase {
 	private leftPlayer: LeftPlayerView;
 	private userPlayer: UserPlayerView;
 
-	private socketMsg: SocketMsg = new SocketMsg();
 	public constructor() {
 		super();
 		this.bind(UIEventCode.GAME_START);
@@ -20,9 +19,7 @@ class FightView extends UIBase {
 				break;
 		}
 	}
-	private setPlayerReady(userId: number){
 
-	}
 	protected createChildren() {
 		super.createChildren();
 		this.skinName = FightSkin;

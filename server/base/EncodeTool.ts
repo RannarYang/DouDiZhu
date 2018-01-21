@@ -4,8 +4,8 @@ export default class EncodeTool {
     /**
      * 构造数据包：包头+包尾
      */
-    public static encodePacket(data: SocketMsg) : Buffer{
-        let valStr = JSON.stringify(data.value)
+    public static encodePacket(data: SocketMsg) : Buffer {
+        let valStr = JSON.stringify(data.value);
         let buffer = new Buffer(4 + Buffer.byteLength(valStr));
         buffer.writeInt16BE(data.opCode, 0);
         buffer.writeInt16BE(data.subCode, 2);
@@ -18,12 +18,12 @@ export default class EncodeTool {
     public static decodePacket(client: ClientPeer): SocketMsg {
         let dataCache = client.dataCache;
 
-        if(dataCache.length < 6) {
+        if (dataCache.length < 6) {
             return null;
         }
         let valLen = dataCache.readInt16BE(4);
         // 数据长度不够约定的长度
-        if(valLen + 6 < dataCache.length) {
+        if (valLen + 6 < dataCache.length) {
             return null;
         }
         let socketMsg = new SocketMsg();

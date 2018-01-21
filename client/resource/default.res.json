@@ -1,545 +1,538 @@
 {
-	"groups": [
+	"groups":[{
+			"keys":"checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,errorInfo_json,sJoker_png,lJoker_png",
+			"name":"preload"
+		}],
+	"resources":[
 		{
-			"keys": "checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,button_down_png,button_up_png,thumb_pb_png,track_pb_png,track_sb_png,bg_jpg,egret_icon_png,description_json,errorInfo_json,sJoker_png,lJoker_png",
-			"name": "preload"
-		}
-	],
-	"resources": [
-		{
-			"url": "assets/CheckBox/checkbox_select_disabled.png",
-			"type": "image",
-			"name": "checkbox_select_disabled_png"
-		},
-		{
-			"url": "assets/CheckBox/checkbox_select_down.png",
-			"type": "image",
-			"name": "checkbox_select_down_png"
+			"name":"checkbox_select_disabled_png",
+			"type":"image",
+			"url":"assets/CheckBox/checkbox_select_disabled.png"
 		},
 		{
-			"url": "assets/CheckBox/checkbox_select_up.png",
-			"type": "image",
-			"name": "checkbox_select_up_png"
+			"name":"checkbox_select_down_png",
+			"type":"image",
+			"url":"assets/CheckBox/checkbox_select_down.png"
 		},
 		{
-			"url": "assets/CheckBox/checkbox_unselect.png",
-			"type": "image",
-			"name": "checkbox_unselect_png"
+			"name":"checkbox_select_up_png",
+			"type":"image",
+			"url":"assets/CheckBox/checkbox_select_up.png"
 		},
 		{
-			"url": "assets/ItemRenderer/selected.png",
-			"type": "image",
-			"name": "selected_png"
+			"name":"checkbox_unselect_png",
+			"type":"image",
+			"url":"assets/CheckBox/checkbox_unselect.png"
 		},
 		{
-			"url": "assets/Panel/border.png",
-			"type": "image",
-			"name": "border_png"
+			"name":"selected_png",
+			"type":"image",
+			"url":"assets/ItemRenderer/selected.png"
 		},
 		{
-			"url": "assets/Panel/header.png",
-			"type": "image",
-			"name": "header_png"
+			"name":"border_png",
+			"type":"image",
+			"url":"assets/Panel/border.png"
 		},
 		{
-			"url": "assets/RadioButton/radiobutton_select_disabled.png",
-			"type": "image",
-			"name": "radiobutton_select_disabled_png"
+			"name":"header_png",
+			"type":"image",
+			"url":"assets/Panel/header.png"
 		},
 		{
-			"url": "assets/RadioButton/radiobutton_select_down.png",
-			"type": "image",
-			"name": "radiobutton_select_down_png"
+			"name":"radiobutton_select_disabled_png",
+			"type":"image",
+			"url":"assets/RadioButton/radiobutton_select_disabled.png"
 		},
 		{
-			"url": "assets/RadioButton/radiobutton_select_up.png",
-			"type": "image",
-			"name": "radiobutton_select_up_png"
+			"name":"radiobutton_select_down_png",
+			"type":"image",
+			"url":"assets/RadioButton/radiobutton_select_down.png"
 		},
 		{
-			"url": "assets/RadioButton/radiobutton_unselect.png",
-			"type": "image",
-			"name": "radiobutton_unselect_png"
+			"name":"radiobutton_select_up_png",
+			"type":"image",
+			"url":"assets/RadioButton/radiobutton_select_up.png"
 		},
 		{
-			"url": "assets/ScrollBar/roundthumb.png",
-			"type": "image",
-			"name": "roundthumb_png"
+			"name":"radiobutton_unselect_png",
+			"type":"image",
+			"url":"assets/RadioButton/radiobutton_unselect.png"
 		},
 		{
-			"url": "assets/Slider/thumb.png",
-			"type": "image",
-			"name": "thumb_png"
+			"name":"roundthumb_png",
+			"type":"image",
+			"url":"assets/ScrollBar/roundthumb.png"
 		},
 		{
-			"url": "assets/Slider/track.png",
-			"type": "image",
-			"name": "track_png"
+			"name":"thumb_png",
+			"type":"image",
+			"url":"assets/Slider/thumb.png"
 		},
 		{
-			"url": "assets/Slider/tracklight.png",
-			"type": "image",
-			"name": "tracklight_png"
+			"name":"track_png",
+			"type":"image",
+			"url":"assets/Slider/track.png"
 		},
 		{
-			"url": "assets/ToggleSwitch/handle.png",
-			"type": "image",
-			"name": "handle_png"
+			"name":"tracklight_png",
+			"type":"image",
+			"url":"assets/Slider/tracklight.png"
 		},
 		{
-			"url": "assets/ToggleSwitch/off.png",
-			"type": "image",
-			"name": "off_png"
+			"name":"handle_png",
+			"type":"image",
+			"url":"assets/ToggleSwitch/handle.png"
 		},
 		{
-			"url": "assets/ToggleSwitch/on.png",
-			"type": "image",
-			"name": "on_png"
+			"name":"off_png",
+			"type":"image",
+			"url":"assets/ToggleSwitch/off.png"
 		},
 		{
-			"url": "assets/Button/button_down.png",
-			"type": "image",
-			"name": "button_down_png"
+			"name":"on_png",
+			"type":"image",
+			"url":"assets/ToggleSwitch/on.png"
 		},
 		{
-			"url": "assets/Button/button_up.png",
-			"type": "image",
-			"name": "button_up_png"
+			"name":"button_down_png",
+			"type":"image",
+			"url":"assets/Button/button_down.png"
 		},
 		{
-			"url": "assets/ProgressBar/thumb_pb.png",
-			"type": "image",
-			"name": "thumb_pb_png"
+			"name":"button_up_png",
+			"type":"image",
+			"url":"assets/Button/button_up.png"
 		},
 		{
-			"url": "assets/ProgressBar/track_pb.png",
-			"type": "image",
-			"name": "track_pb_png"
+			"name":"thumb_pb_png",
+			"type":"image",
+			"url":"assets/ProgressBar/thumb_pb.png"
 		},
 		{
-			"url": "assets/ScrollBar/track_sb.png",
-			"type": "image",
-			"name": "track_sb_png"
+			"name":"track_pb_png",
+			"type":"image",
+			"url":"assets/ProgressBar/track_pb.png"
 		},
 		{
-			"url": "assets/bg.jpg",
-			"type": "image",
-			"name": "bg_jpg"
+			"name":"track_sb_png",
+			"type":"image",
+			"url":"assets/ScrollBar/track_sb.png"
 		},
 		{
-			"url": "assets/egret_icon.png",
-			"type": "image",
-			"name": "egret_icon_png"
+			"name":"bg_jpg",
+			"type":"image",
+			"url":"assets/bg.jpg"
 		},
 		{
-			"url": "config/description.json",
-			"type": "json",
-			"name": "description_json"
+			"name":"egret_icon_png",
+			"type":"image",
+			"url":"assets/egret_icon.png"
 		},
 		{
-			"url": "game_assets/Identity/Farmer.png",
-			"type": "image",
-			"name": "Farmer_png"
+			"name":"description_json",
+			"type":"json",
+			"url":"config/description.json"
 		},
 		{
-			"url": "game_assets/Identity/Landlord.png",
-			"type": "image",
-			"name": "Landlord_png"
+			"name":"Farmer_png",
+			"type":"image",
+			"url":"game_assets/Identity/Farmer.png"
 		},
 		{
-			"url": "game_assets/Poker/CardBack.png",
-			"type": "image",
-			"name": "CardBack_png"
+			"name":"Landlord_png",
+			"type":"image",
+			"url":"game_assets/Identity/Landlord.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubEight.png",
-			"type": "image",
-			"name": "ClubEight_png"
+			"name":"CardBack_png",
+			"type":"image",
+			"url":"game_assets/Poker/CardBack.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubFive.png",
-			"type": "image",
-			"name": "ClubFive_png"
+			"name":"ClubEight_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubEight.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubFour.png",
-			"type": "image",
-			"name": "ClubFour_png"
+			"name":"ClubFive_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubFive.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubJack.png",
-			"type": "image",
-			"name": "ClubJack_png"
+			"name":"ClubFour_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubFour.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubKing.png",
-			"type": "image",
-			"name": "ClubKing_png"
+			"name":"ClubJack_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubJack.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubNine.png",
-			"type": "image",
-			"name": "ClubNine_png"
+			"name":"ClubKing_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubKing.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubOne.png",
-			"type": "image",
-			"name": "ClubOne_png"
+			"name":"ClubNine_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubNine.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubQueen.png",
-			"type": "image",
-			"name": "ClubQueen_png"
+			"name":"ClubOne_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubOne.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubSeven.png",
-			"type": "image",
-			"name": "ClubSeven_png"
+			"name":"ClubQueen_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubQueen.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubSix.png",
-			"type": "image",
-			"name": "ClubSix_png"
+			"name":"ClubSeven_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubSeven.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubTen.png",
-			"type": "image",
-			"name": "ClubTen_png"
+			"name":"ClubSix_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubSix.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubThree.png",
-			"type": "image",
-			"name": "ClubThree_png"
+			"name":"ClubTen_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubTen.png"
 		},
 		{
-			"url": "game_assets/Poker/ClubTwo.png",
-			"type": "image",
-			"name": "ClubTwo_png"
+			"name":"ClubThree_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubThree.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartEight.png",
-			"type": "image",
-			"name": "HeartEight_png"
+			"name":"ClubTwo_png",
+			"type":"image",
+			"url":"game_assets/Poker/ClubTwo.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartFive.png",
-			"type": "image",
-			"name": "HeartFive_png"
+			"name":"HeartEight_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartEight.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartFour.png",
-			"type": "image",
-			"name": "HeartFour_png"
+			"name":"HeartFive_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartFive.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartJack.png",
-			"type": "image",
-			"name": "HeartJack_png"
+			"name":"HeartFour_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartFour.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartKing.png",
-			"type": "image",
-			"name": "HeartKing_png"
+			"name":"HeartJack_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartJack.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartNine.png",
-			"type": "image",
-			"name": "HeartNine_png"
+			"name":"HeartKing_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartKing.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartOne.png",
-			"type": "image",
-			"name": "HeartOne_png"
+			"name":"HeartNine_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartNine.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartQueen.png",
-			"type": "image",
-			"name": "HeartQueen_png"
+			"name":"HeartOne_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartOne.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartSeven.png",
-			"type": "image",
-			"name": "HeartSeven_png"
+			"name":"HeartQueen_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartQueen.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartSix.png",
-			"type": "image",
-			"name": "HeartSix_png"
+			"name":"HeartSeven_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartSeven.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartTen.png",
-			"type": "image",
-			"name": "HeartTen_png"
+			"name":"HeartSix_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartSix.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartThree.png",
-			"type": "image",
-			"name": "HeartThree_png"
+			"name":"HeartTen_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartTen.png"
 		},
 		{
-			"url": "game_assets/Poker/HeartTwo.png",
-			"type": "image",
-			"name": "HeartTwo_png"
+			"name":"HeartThree_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartThree.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeEight.png",
-			"type": "image",
-			"name": "SpadeEight_png"
+			"name":"HeartTwo_png",
+			"type":"image",
+			"url":"game_assets/Poker/HeartTwo.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeFive.png",
-			"type": "image",
-			"name": "SpadeFive_png"
+			"name":"SpadeEight_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeEight.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeFour.png",
-			"type": "image",
-			"name": "SpadeFour_png"
+			"name":"SpadeFive_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeFive.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeJack.png",
-			"type": "image",
-			"name": "SpadeJack_png"
+			"name":"SpadeFour_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeFour.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeKing.png",
-			"type": "image",
-			"name": "SpadeKing_png"
+			"name":"SpadeJack_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeJack.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeNine.png",
-			"type": "image",
-			"name": "SpadeNine_png"
+			"name":"SpadeKing_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeKing.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeOne.png",
-			"type": "image",
-			"name": "SpadeOne_png"
+			"name":"SpadeNine_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeNine.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeQueen.png",
-			"type": "image",
-			"name": "SpadeQueen_png"
+			"name":"SpadeOne_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeOne.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeSeven.png",
-			"type": "image",
-			"name": "SpadeSeven_png"
+			"name":"SpadeQueen_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeQueen.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeSix.png",
-			"type": "image",
-			"name": "SpadeSix_png"
+			"name":"SpadeSeven_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeSeven.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeTen.png",
-			"type": "image",
-			"name": "SpadeTen_png"
+			"name":"SpadeSix_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeSix.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeThree.png",
-			"type": "image",
-			"name": "SpadeThree_png"
+			"name":"SpadeTen_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeTen.png"
 		},
 		{
-			"url": "game_assets/Poker/SpadeTwo.png",
-			"type": "image",
-			"name": "SpadeTwo_png"
+			"name":"SpadeThree_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeThree.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareEight.png",
-			"type": "image",
-			"name": "SquareEight_png"
+			"name":"SpadeTwo_png",
+			"type":"image",
+			"url":"game_assets/Poker/SpadeTwo.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareFive.png",
-			"type": "image",
-			"name": "SquareFive_png"
+			"name":"SquareEight_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareEight.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareFour.png",
-			"type": "image",
-			"name": "SquareFour_png"
+			"name":"SquareFive_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareFive.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareJack.png",
-			"type": "image",
-			"name": "SquareJack_png"
+			"name":"SquareFour_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareFour.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareKing.png",
-			"type": "image",
-			"name": "SquareKing_png"
+			"name":"SquareJack_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareJack.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareNine.png",
-			"type": "image",
-			"name": "SquareNine_png"
+			"name":"SquareKing_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareKing.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareOne.png",
-			"type": "image",
-			"name": "SquareOne_png"
+			"name":"SquareNine_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareNine.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareQueen.png",
-			"type": "image",
-			"name": "SquareQueen_png"
+			"name":"SquareOne_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareOne.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareSeven.png",
-			"type": "image",
-			"name": "SquareSeven_png"
+			"name":"SquareQueen_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareQueen.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareSix.png",
-			"type": "image",
-			"name": "SquareSix_png"
+			"name":"SquareSeven_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareSeven.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareTen.png",
-			"type": "image",
-			"name": "SquareTen_png"
+			"name":"SquareSix_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareSix.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareThree.png",
-			"type": "image",
-			"name": "SquareThree_png"
+			"name":"SquareTen_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareTen.png"
 		},
 		{
-			"url": "game_assets/Poker/SquareTwo.png",
-			"type": "image",
-			"name": "SquareTwo_png"
+			"name":"SquareThree_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareThree.png"
 		},
 		{
-			"url": "game_assets/UI/Common_BG4_2x.png",
-			"type": "image",
-			"name": "Common_BG4_2x_png"
+			"name":"SquareTwo_png",
+			"type":"image",
+			"url":"game_assets/Poker/SquareTwo.png"
 		},
 		{
-			"url": "game_assets/UI/bg.png",
-			"type": "image",
-			"name": "bg_png"
+			"name":"Common_BG4_2x_png",
+			"type":"image",
+			"url":"game_assets/UI/Common_BG4_2x.png"
 		},
 		{
-			"url": "game_assets/UI/btn1.png",
-			"type": "image",
-			"name": "btn1_png"
+			"name":"bg_png",
+			"type":"image",
+			"url":"game_assets/UI/bg.png"
 		},
 		{
-			"url": "game_assets/UI/btn2.png",
-			"type": "image",
-			"name": "btn2_png"
+			"name":"btn1_png",
+			"type":"image",
+			"url":"game_assets/UI/btn1.png"
 		},
 		{
-			"url": "game_assets/UI/btn3.png",
-			"type": "image",
-			"name": "btn3_png"
+			"name":"btn2_png",
+			"type":"image",
+			"url":"game_assets/UI/btn2.png"
 		},
 		{
-			"url": "game_assets/UI/buy_btn_06.png",
-			"type": "image",
-			"name": "buy_btn_06_png"
+			"name":"btn3_png",
+			"type":"image",
+			"url":"game_assets/UI/btn3.png"
 		},
 		{
-			"url": "game_assets/UI/close_btn.png",
-			"type": "image",
-			"name": "close_btn_png"
+			"name":"buy_btn_06_png",
+			"type":"image",
+			"url":"game_assets/UI/buy_btn_06.png"
 		},
 		{
-			"url": "game_assets/UI/default.png",
-			"type": "image",
-			"name": "default_png"
+			"name":"close_btn_png",
+			"type":"image",
+			"url":"game_assets/UI/close_btn.png"
 		},
 		{
-			"url": "game_assets/UI/dou.png",
-			"type": "image",
-			"name": "dou_png"
+			"name":"default_png",
+			"type":"image",
+			"url":"game_assets/UI/default.png"
 		},
 		{
-			"url": "game_assets/UI/goods_BG2.png",
-			"type": "image",
-			"name": "goods_BG2_png"
+			"name":"dou_png",
+			"type":"image",
+			"url":"game_assets/UI/dou.png"
 		},
 		{
-			"url": "game_assets/UI/hlddz.00045.png",
-			"type": "image",
-			"name": "hlddz.00045_png"
+			"name":"goods_BG2_png",
+			"type":"image",
+			"url":"game_assets/UI/goods_BG2.png"
 		},
 		{
-			"url": "game_assets/UI/huanledou.png",
-			"type": "image",
-			"name": "huanledou_png"
+			"name":"hlddz.00045_png",
+			"type":"image",
+			"url":"game_assets/UI/hlddz.00045.png"
 		},
 		{
-			"url": "game_assets/UI/jishianniudi.png",
-			"type": "image",
-			"name": "jishianniudi_png"
+			"name":"huanledou_png",
+			"type":"image",
+			"url":"game_assets/UI/huanledou.png"
 		},
 		{
-			"url": "game_assets/UI/jujsidai.png",
-			"type": "image",
-			"name": "jujsidai_png"
+			"name":"jishianniudi_png",
+			"type":"image",
+			"url":"game_assets/UI/jishianniudi.png"
 		},
 		{
-			"url": "game_assets/UI/kuaisu_choose.png",
-			"type": "image",
-			"name": "kuaisu_choose_png"
+			"name":"jujsidai_png",
+			"type":"image",
+			"url":"game_assets/UI/jujsidai.png"
 		},
 		{
-			"url": "game_assets/UI/logo.png",
-			"type": "image",
-			"name": "logo_png"
+			"name":"kuaisu_choose_png",
+			"type":"image",
+			"url":"game_assets/UI/kuaisu_choose.png"
 		},
 		{
-			"url": "game_assets/UI/new_BJ.png",
-			"type": "image",
-			"name": "new_BJ_png"
+			"name":"logo_png",
+			"type":"image",
+			"url":"game_assets/UI/logo.png"
 		},
 		{
-			"url": "game_assets/UI/nongmin2.png",
-			"type": "image",
-			"name": "nongmin2_png"
+			"name":"new_BJ_png",
+			"type":"image",
+			"url":"game_assets/UI/new_BJ.png"
 		},
 		{
-			"url": "game_assets/UI/panel-blue.png",
-			"type": "image",
-			"name": "panel-blue_png"
+			"name":"nongmin2_png",
+			"type":"image",
+			"url":"game_assets/UI/nongmin2.png"
 		},
 		{
-			"url": "game_assets/UI/panel-orange.png",
-			"type": "image",
-			"name": "panel-orange_png"
+			"name":"panel-blue_png",
+			"type":"image",
+			"url":"game_assets/UI/panel-blue.png"
 		},
 		{
-			"url": "game_assets/UI/public_bg.jpg",
-			"type": "image",
-			"name": "public_bg_jpg"
+			"name":"panel-orange_png",
+			"type":"image",
+			"url":"game_assets/UI/panel-orange.png"
 		},
 		{
-			"url": "game_assets/UI/quxiao_loding (2).png",
-			"type": "image",
-			"name": "quxiao_loding (2)_png"
+			"name":"public_bg_jpg",
+			"type":"image",
+			"url":"game_assets/UI/public_bg.jpg"
 		},
 		{
-			"url": "game_assets/UI/setting.png",
-			"type": "image",
-			"name": "setting_png"
+			"name":"setting_png",
+			"type":"image",
+			"url":"game_assets/UI/setting.png"
 		},
 		{
-			"name": "errorInfo_json",
-			"type": "json",
-			"url": "config/errorInfo.json"
+			"name":"errorInfo_json",
+			"type":"json",
+			"url":"config/errorInfo.json"
 		},
 		{
-			"name": "sJoker_png",
-			"type": "image",
-			"url": "game_assets/Poker/sJoker.png"
+			"name":"sJoker_png",
+			"type":"image",
+			"url":"game_assets/Poker/sJoker.png"
 		},
 		{
-			"name": "lJoker_png",
-			"type": "image",
-			"url": "game_assets/Poker/lJoker.png"
+			"name":"lJoker_png",
+			"type":"image",
+			"url":"game_assets/Poker/lJoker.png"
 		}
 	]
 }

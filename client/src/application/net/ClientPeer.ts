@@ -42,7 +42,7 @@ class ClientPeer {
     /**
      * 接收并处理数据
      */
-    private onReceiveMessage(data: ProgressEvent) {
+    private onReceiveMessage() {
         let byte : egret.ByteArray = new egret.ByteArray();
         this.socket.readBytes(byte);
         let msg = EncodeTool.decodePacket(byte);

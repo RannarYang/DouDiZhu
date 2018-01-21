@@ -22,4 +22,4 @@ class UserDto {
         this.exp = exp;
     }
 }
-export default UserDto 
+export default UserDto;

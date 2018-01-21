@@ -1,5 +1,5 @@
-import Identity from "../../constant/Identity";
-import CardDto from "./CardDto";
+import Identity from '../../constant/Identity';
+import CardDto from './CardDto';
 
 class PlayerDto {
     public userId: number;
@@ -13,10 +13,10 @@ class PlayerDto {
     }
     /**
      * 添加卡牌
-     * @param card 
+     * @param card
      */
-    public add(card: CardDto) : void{
+    public add(card: CardDto) : void {
         this.cardList.push(card);
     }
 }
-export default PlayerDto
+export default PlayerDto;

@@ -1,9 +1,7 @@
-import ConcurrentInt from "../../../base/concurrent/ConcurrentInt";
-
 /*
  * @Description:  回合管理类
- * @Author: Ran Yang 
- * @Date: 2018-01-04 22:38:39 
+ * @Author: Ran Yang
+ * @Date: 2018-01-04 22:38:39
  * @Last Modified by: Ran Yang
  * @Last Modified time: 2018-01-04 22:49:06
  */
@@ -40,7 +38,7 @@ export default class RoundModel {
     }
     /**
      * 开始出牌
-     * @param userId 
+     * @param userId
      */
     public start(userId: number): void {
         this.currentUid = userId;
@@ -48,10 +46,10 @@ export default class RoundModel {
     }
     /**
      * 改变出牌者
-     * @param length 牌的长度 
+     * @param length 牌的长度
      * @param type 牌的类型
      * @param weight 牌的权重
-     * @param userId 
+     * @param userId
      */
     public change(length: number, type: number, weight: number, userId: number) {
         this.biggestUid = userId;

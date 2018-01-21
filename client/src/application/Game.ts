@@ -34,7 +34,6 @@ class Game {
 
 		// 进入开始界面
 		Game.getInstance().loadScene(StartScene);
-
 	}
 	public loadScene<T extends SceneBase>(t: {new(a): T}) {
 		// 加载新场景

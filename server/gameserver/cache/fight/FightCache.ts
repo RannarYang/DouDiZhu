@@ -1,5 +1,5 @@
-import ConcurrentInt from "../../../base/concurrent/ConcurrentInt";
-import FightRoom from "./FIghtRoom";
+import ConcurrentInt from '../../../base/concurrent/ConcurrentInt';
+import FightRoom from './FIghtRoom';
 
 export default class FightCache {
     /**
@@ -17,11 +17,11 @@ export default class FightCache {
     private id: ConcurrentInt = new ConcurrentInt(0);
     /**
      * 创建战斗房间
-     * @param uidList 
+     * @param uidList
      */
     public create(uidList: number[]): FightRoom {
         let room: FightRoom = null;
-        if(this.roomQueue.length > 0) {
+        if (this.roomQueue.length > 0) {
             room = this.roomQueue.pop();
             room.init(uidList);
         } else {
@@ -29,20 +29,20 @@ export default class FightCache {
         }
 
         // 绑定映射关系
-        uidList.forEach((value, index) => {
+        uidList.forEach((value) => {
             this.uidRoomIdDict[value] = room.id;
-        })
+        });
         this.idRoomDict[room.id] = room;
 
         return room;
     }
     /**
      * 根据用户id获取所在房间
-     * @param uid 
+     * @param uid
      */
     public getRoomByUid(uid: number): FightRoom {
-        if(!!this.uidRoomIdDict[uid] == false) {
-            throw new Error("当前用户不在房间");
+        if (!!this.uidRoomIdDict[uid] === false) {
+            throw new Error('当前用户不在房间');
         }
         let roomId = this.uidRoomIdDict[uid];
         let room: FightRoom = this.getRoom(roomId);
@@ -50,10 +50,10 @@ export default class FightCache {
     }
     /**
      * 根据房间id获取房间
-     * @param id 
+     * @param id
      */
     public getRoom(id: number): FightRoom {
-        if(!this.idRoomDict[id]) {
+        if (!this.idRoomDict[id]) {
             throw new Error('不存在这个房间');
         }
         let room : FightRoom = this.idRoomDict[id];
@@ -61,15 +61,15 @@ export default class FightCache {
     }
     /**
      * 摧毁房间
-     * @param room 
+     * @param room
      */
     public destroy(room: FightRoom): void {
         // 移除映射关系
         delete this.idRoomDict[room.id];
         let uidRoomIdDict = this.uidRoomIdDict;
-        room.playerList.forEach((player, index)=>{
+        room.playerList.forEach((player) => {
             delete uidRoomIdDict[player.userId];
-        })
+        });
         // 初始化房间数据
         room.playerList = [];
         room.leaveUidList = [];

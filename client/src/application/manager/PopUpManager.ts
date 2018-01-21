@@ -123,7 +123,7 @@ class PopUpManager{
 	}
 	private getTopImpenetratedIndex(): number {
 		for(let i = this._showStack.length - 1; i >= 0; i--) {
-			let {view, lucencyType} = this._showStack[i];
+			let {lucencyType} = this._showStack[i];
 			if(lucencyType != PopUpLucencyType.Penetrate) {
 				return i;
 			}

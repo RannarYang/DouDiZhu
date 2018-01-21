@@ -1,5 +1,5 @@
-import ClientPeer from "../../../base/ClientPeer";
-import SocketMsg from "../../../base/SocketMsg";
+import ClientPeer from '../../../base/ClientPeer';
+import SocketMsg from '../../../base/SocketMsg';
 
 export default class MatchRoom {
     public id: number;
@@ -19,26 +19,26 @@ export default class MatchRoom {
      * 房间是否满了
      */
     public isFull() : boolean {
-        return Object.getOwnPropertyNames(this.uidClientDict).length == 3;
+        return Object.getOwnPropertyNames(this.uidClientDict).length === 3;
     }
     /**
      * 房间是否空了
      */
     public isEmpty() : boolean {
-        return Object.getOwnPropertyNames(this.uidClientDict).length == 0;
+        return Object.getOwnPropertyNames(this.uidClientDict).length === 0;
     }
     /**
      * 是否所有人都准备了
      */
     public isAllReady() : boolean {
-        return this.readyUidList.length == 3;
+        return this.readyUidList.length === 3;
     }
     /**
      * 获取房间里的所有玩家的Uid
      */
     public getUidList(): number[] {
-        let uidLIst : number[] = Object.getOwnPropertyNames(this.uidClientDict).map((value, index) => {
-            return parseInt(value);
+        let uidLIst : number[] = Object.getOwnPropertyNames(this.uidClientDict).map((value) => {
+            return parseInt(value, 10);
         });
         return uidLIst;
     }
@@ -65,14 +65,16 @@ export default class MatchRoom {
         this.readyUidList.push(userId);
     }
     public brocast(opCode: number, subCode: number, value: any, exClient: ClientPeer = null) {
-        let msg: SocketMsg = new SocketMsg(opCode, subCode, value)
+        let msg: SocketMsg = new SocketMsg(opCode, subCode, value);
         let client: ClientPeer = null;
         for (let uid in this.uidClientDict) {
-            client = this.uidClientDict[uid];
-            if(client == exClient) {
-                continue;
+            if (this.uidClientDict[uid]) {
+                client = this.uidClientDict[uid];
+                if (client === exClient) {
+                    continue;
+                }
+                client.sendMsg(msg);
             }
-            client.sendMsg(msg);
         }
     }
 }
